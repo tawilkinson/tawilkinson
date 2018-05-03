@@ -1,0 +1,89 @@
+---
+layout: post
+title: AjaXplorer on FreeNAS 8.3
+categories:
+- Linux
+- Tinker
+- Windows
+tags:
+- FreeNAS
+- HP
+- jails
+- ProLiant MicroServer
+- technology
+- web server
+status: publish
+type: post
+published: true
+meta:
+  structured_content: '{"oembed":{},"overlay":true}'
+  _thumbnail_id: '545'
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p><em>In which I set-up a nice web GUI for my home server...</em></p>
+<img src="https://lh6.googleusercontent.com/-I_MoIb62nPQ/Ud2PICAgSpI/AAAAAAAAAbA/goMgteBYH80/s500/freenas_logo_twitter.jpg" title="" alt=""><p>So I recently invested in a HP ProLiant MicroServer N54L to backup my PC to. Also it should be quite useful as a media server etc. I've installed FreeNAS as my OS but wanted to have a easy-to-use Web interface for accessing my files over my Network. I followed the guide here: <a href="http://forums.freenas.org/threads/howto-ajaxplorer-with-nginx-in-plugin-jail-mysql-optional-webdav.10297/">http://forums.freenas.org/threads/howto-ajaxplorer-with-nginx-in-plugin-jail-mysql-optional-webdav.10297/</a> but a few things need changing as always.</p>
+<p> </p>
+<p> </p>
+<h3>Jails</h3>
+<p>There is a guide on setting up a jail on your FreeNAS system here: <a href="http://www.freenas.org/images/resources/freenas8.3.1/freenas8.3.1_guide.html#__RefHeading__33325_859822269">http://www.freenas.org/images/resources/freenas8.3.1/freenas8.3.1_guide.html# __RefHeading__33325_859822269</a></p>
+<h3>Installing Nginx + PHP</h3>
+<p>Make sure to extract portsnap:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">portsnap extract</code></pre>
+<p>Then fetch updates:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">portsnap fetch update</code></pre>
+<p>Replace  the outdated version of pkg-config:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">pkg_delete --force pkg-config-0.25_1cd /usr/ports/devel/pkgconf &amp;&amp; make install clean</code></pre>
+<p>Install Nginx:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cd /usr/ports/www/nginx &amp;&amp; make install clean</code></pre>
+<p>Making sure to add the following options in config with spacebar: HTTP_DAV, HTTP_FLV, HTTP_GZIP_STATIC, HTTP_PERL, HTTP_SSL, HTTP_DAV_EXT. During this section you may find the fetch for libgcrypt fails. Go to <a href="http://www.freshports.org/">http://www.freshports.org</a> to check for an alternate download location. Then extract it to /usr/ports/security/libgcrypt:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cd /usr/ports/security tar xvjf libgcrypt-1.5.2.tar.bz2 mv libgcrypt-1.5.2 libgcrypt cd libgcrypt
+./configure make install</code></pre>
+<p>Then PHP 5:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cd /usr/ports/lang/php5 &amp;&amp; make install clean</code></pre>
+<p>With the option: FPM Accept all configs after this with no changes</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cd /usr/ports/lang/php5-extensions &amp;&amp; make install</code></pre>
+<p>With these options: CURL, GD, MBSTRING, MCRYPT, MySQL, MySQLi, OPENSSL, PDO_MySQL, ZIP, ZLIB Accept all configs after this with no changes</p>
+<p>Insert this into /etc/rc.conf:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">nginx_enable="YES" php_fpm_enable="YES"</code></pre>
+<p>Then copy the php init script:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini</code></pre>
+<h3>Set up SSL</h3>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cd /usr/local/etc/nginx
+openssl genrsa -des3 -out server.key 1024
+openssl req -new -key server.key -out server.csr
+openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt 
+cp server.key server.key.orig
+openssl rsa -in server.key.orig -out server.key</code></pre>
+<h3>Installing AjaXplorer 5</h3>
+<p>Grab the latest version:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">fetch http://sourceforge.net/projects/ajaxplorer/files/ajaxplorer/stable-channel/5.0.1/ajaxplorer-core-5.0.1.tar.gz/download</code></pre>
+<p>Change to the target directory and un-tar:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">mkdir /usr/local/www/ajaxplorer cd /usr/local/www/ajaxplorer tar -xvzpf ajaxplorer.tar.gz</code></pre>
+<h3>Configure Nginx</h3>
+<p>Edit the following files† -  /usr/local/etc/nginx/php-fpm.conf, /usr/local/etc/nginx/nginx.conf, /usr/local/etc/nginx/fastcgi_params according to this link: <a href="http://forums.freenas.org/threads/howto-ajaxplorer-with-nginx-in-plugin-jail-mysql-optional-webdav.10297/">http://forums.freenas.org/threads/howto-ajaxplorer-with-nginx-in-plugin-jail-mysql-optional-webdav.10297/ </a></p>
+<p>Then run:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cp /usr/local/etc/nginx/php-fpm.conf /usr/local/etc/php-fpm.conf
+/usr/local/etc/rc.d/php-fpm restart
+/usr/local/etc/rc.d/nginx restart</code></pre>
+<p>†The built in editor command on FreeBSD is ee</p>
+<h3>Configure AjaXplorer</h3>
+<p>If you go to https://&lt;jail ip&gt;/ajaxplorer you should see the config screen:</p>
+  
+      <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55d2439fe4b01d8a4ee50651_1439843237483__img.png_" alt="">
+  
+
+<p id="yui_3_17_2_1_1439841392162_103718">To sort the specific errors I had:</p>
+<p><strong>Security Breach:</strong> This can appear even if your ajaxplorer/data directory is protected. When I check all my data directories returned a 403 forbidden message which is ok.</p>
+<p><strong>PHP Session:</strong> Set a session.save_path in php.ini. /tmp works.</p>
+<p><strong>PHP Output Buffer:</strong> Set output_buffering to "Off" in php.ini and restart the service.</p>
+<p><strong>Server charset encoding:</strong> Set the locale in conf/bootstrap_conf.php as suggested:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-php">define("AJXP_LOCALE", "en_GB.UTF-8");</code></pre>
+<p>Then you should see the ready screen:</p>
+  
+      <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55d24360e4b0145993597965_1439843175936__img.png_" alt="">
+  
+
+<p id="yui_3_17_2_1_1439841392162_100076">Follow the Wizard and hit "Install Ajaxplorer Now!" when you're done. After that follow the AjaXplorer documentation!</p>
+<p>Tom Out!</p>
+</body></html>

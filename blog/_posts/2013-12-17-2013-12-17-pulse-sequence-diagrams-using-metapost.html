@@ -1,0 +1,94 @@
+---
+layout: post
+title: Pulse Sequence Diagrams Using Metapost
+categories:
+- LaTeX
+- Linux
+- Programming
+- Tinker
+tags:
+- academia
+- Gentoo
+- imaging
+- MRI
+- research
+- science
+- software
+- technology
+- thesis
+status: publish
+type: post
+published: true
+meta:
+  _thumbnail_id: '497'
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p><em>In which I use <a target="_blank" href="http://foundry.supelec.fr/gf/project/metapost/">MetaPost</a> to generate publication quality <a target="_blank" href="http://en.wikipedia.org/wiki/Pulse_sequence">pulse sequence</a> diagrams...</em></p>
+<p>Pulse sequences are the series of radio-frequency pulses required to generate an MR image. If you are an MR Physicist you will see these a lot and probably wondered how can I generate nice pulse sequences for my thesis, papers etc. Well handily using MetaPost and <a target="_blank" href="http://www.celos.net/comp/pulses/">these files</a> you can! First install Tex Live*:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">sudo USE="doc dvi2tty dvipdfm extra games graphics music png pstricks science truetype X" emerge -av texlive</code></pre>
+<p>Then install MetaPost:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">sudo emerge -av metapost</code></pre>
+<p>Then ensure you have all the necessary files from <a target="_blank" href="http://ctan.org/tex-archive/graphics/metapost/base/texmf/metapost/base">CTAN</a> which aren't installed alongside metapost†:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">mkdir ~/texmf
+mkdir ~/texmf/metapost 
+cd ~/texmf/metapost
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/README
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/TEX.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/boxes.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/format.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/graph.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/marith.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/mfplain.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/mpost.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/plain.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/rboxes.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/sarith.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/string.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/texnum.mp 
+wget http://mirrors.ctan.org/graphics/metapost/base/texmf/metapost/base/troffnum.mp</code></pre>
+<p>Do this in /usr/share/texmf to allow all users to access the files. Finally, download the pulse sequence files from <a href="http://www.celos.net/comp/pulses/">http://www.celos.net/comp/pulses/</a> to the directory you intend to run MetaPost from.</p>
+<p>Now write your pulse sequence into a metapost file. Below is an example of a generic FLASH sequence - basically treat each part of your sequence as a line and follow the documentation in the pulse.mp file:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-latex">%FLASH sequence 
+beginfig(1); 
+input pulses.mp; 
+initf; 
+startline(rf,"RF"); 
+xline(2); 
+xpulse(1,1,""); 
+xline(6); 
+startline(g0,"Gx"); 
+xline(1); 
+xsquare(2,0.5); 
+xsquare(1,-0.5); 
+xline(5); 
+startline(g1,"Gy"); 
+xline(3); 
+xtable(1,0.8,5, -1); 
+xline(5); 
+startline(g2,"Gz"); 
+xline(3); 
+xsquare(2,-0.5); 
+xsquare(3,0.5); 
+xline(1); 
+endfig; 
+end;</code></pre>
+<p>The section below if added after the image but before endfig; will add a white background instead of a transparent one.</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-latex">% save image to temp variable 
+picture pic; 
+pic := currentpicture; 
+% clear image currentpicture := nullpicture; 
+% fill a bounding pox of pic with color 
+fill bbox pic withcolor white; 
+% re-draw pic ontop 
+draw pic;</code></pre>
+<p>If you have <a target="_blank" href="http://www.imagemagick.org/">ImageMagick</a> installed you can easily convert the image to a png or similar for use in Windows or uploading to your blog:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">convert -density 300 flash.1 flash.png</code></pre>
+<p id="yui_3_17_2_11_1436996827544_11961">You should end up with a nice pulse sequence diagram:</p>
+<img src="http://lh5.googleusercontent.com/-HnS9_Sbu2fw/UrCYazM9qtI/AAAAAAAAAzk/nNDmMc-wp1U/w1003-h881-no/flash.png" title="" alt=""><p>*<a target="_blank" href="http://www.gentoo.org/">Gentoo</a> installation shown</p>
+<p>†Gentoo doesn't pull in these files and I found the solution here: <a href="http://tiaozhanshu.com/doc/funtoo/metapost">http://tiaozhanshu.com/doc/funtoo/metapost</a></p>
+<p>Tom Out!</p>
+<p>P.S. Now a Major Github repository! <a target="_blank" href="https://github.com/tawilkinson/pulses">https://github.com/tawilkinson/pulses</a></p>
+<h3>References</h3>
+<p>[1] Haase, A., et al. (1986) FLASH Imaging. Rapid NMR Imaging Using Low Flip-Angle Pulses. <em>Journal of Magnetic Resonance</em>, 67, pp 258-66.</p>
+</body></html>

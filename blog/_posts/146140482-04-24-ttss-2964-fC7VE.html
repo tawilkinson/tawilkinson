@@ -1,0 +1,29 @@
+---
+layout: post
+title: DuckDNS and FreeNAS
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta: {}
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p><em><a href="http://duckdns.org"><img src="http://static1.squarespace.com/static/55397e91e4b0061c5889b3f0/556839abe4b0d9163c0ffd27/55683a25e4b0d9163c1017bf/1432894443095/DuckDNS-logo.jpg" alt="DuckDNS-logo" class="alignright size-full wp-image-2967"></a>In which I get annoyed at No-IP and move to DuckDNS...</em>I have used <a title="No-IP" href="http://www.noip.com/" target="_blank">No-IP</a> as my dynamic DNS provider since <a title="DynDNS" href="http://dyn.com/dns/" target="_blank">DynDNS</a> started charging. A friend recently pointed me in the direction of <a title="DuckDNS" href="http://duckdns.org/" target="_blank">DuckDNS</a> which doesn't require me to click a link every month to maintain the service. Here's how to set it up on FreeNAS:</p>
+<ol>
+<li>Sign up for a DuckDNS account.</li>
+<li>Make a new subdomain.</li>
+<li>Get your token (a very long sequence of random characters on the home page)</li>
+<li>Login to your Freenas server GUI</li>
+<li>Go to System-&gt;Cron Jobs-&gt;Add New Cron Job</li>
+<li>Set up the new cron job.
+<ol>
+<li>Set it run as 'nobody</li>
+<li> You can have it at 1 minute past the hour, every 12 hours (or less), every day of the week</li>
+<li>The command to run is: /usr/local/bin/curl <a class="externalLink" href="https://duckdns.org/update/subdomain/token" target="_blank" rel="nofollow">https://duckdns.org/update/subdomain/token</a>
+</li>
+</ol>
+</li>
+</ol>
+</body></html>

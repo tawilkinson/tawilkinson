@@ -1,0 +1,77 @@
+---
+layout: post
+title: Preparing for Bayesian Mathematics in Python
+categories:
+- Programming
+- Tinker
+- Windows
+tags:
+- 64 bit
+- bayes
+- bayesian
+- installation
+- numpy
+- python
+- research
+- science
+- scipy
+- software
+- technology
+- topslider
+- Windows 7
+status: publish
+type: post
+published: true
+meta:
+  _thumbnail_id: '358'
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p><em>In which I run through setting up a Python environment on Windows...</em></p>
+<p>I'm going to preface this post by saying I'm not breaking any new ground here. As is often the case, though, a beginner wanting to set-up an environment to do this will have to go to multiple websites to collect this info so I'm going to distil it into one post.</p>
+<p>I am going to talk about Python 2.7 as currently it has the most support for libraries. This method <em>should</em> work equally well for Python 3 but I have not tested this.</p>
+<h3>Install Python and GUI</h3>
+  
+       <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_5581ee3de4b0a5db48a56d6f_1434578495329__img.png_" alt=" Make sure to add Python to command line by selecting " add to path>  Make sure to add Python to command line by selecting "add to path".  
+  
+
+<p>You will now have a working Python environment that will run from command line. The standard install also includes a basic Python GUI that will be available through the Python folder in the Start Menu. If you wish to install a full Python IDE go ahead and install <a target="_blank" href="https://pydev.org/manual_101_install.html">PyDev</a> which is an add-in for the popular and free <a target="_blank" href="https://eclipse.org/downloads/">Eclipse IDE</a>.</p>
+<h3>Install NumPy and SciPy</h3>
+<ol>
+<li>Ensure you have the <a target="_blank" href="https://aka.ms/vcpython27">Python C++ re-distributable</a> installed.</li>
+<li>Install NumPy and SciPy using pip: pip install numpy and pip install scipy</li>
+<li>Type import numpy followed by import scipy at a Python prompt. These should return a blank prompt if there are no errors.*</li>
+</ol>
+<p>You should now have all the pre-reqs for installing Bayesian Python libraries. If you want to use the built-in Python installer though "you're gonna have a bad time." You need a Fortran compiler and Windows doesn't come with one as standard.</p>
+  
+       <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_5581ee6de4b0f09e1208b7f0_1434578542187__img.png_" alt="No compiler and no play make Windows something something..."> No compiler and no play make Windows something something... 
+  
+
+<p>*If you install nose (pip install nose) you can also run numpy.test() and scipy.test() to get fuller results about your install.</p>
+<h3>Installing Cygwin</h3>
+<p>The solution to your Fortran compiler woes is to set-up Cygwin. While you are at it you might as well add all the standard linux commands to your Path in Windows.</p>
+<ol>
+<li>Grab <a target="_blank" href="https://cygwin.com/install.html">Cygwin</a> and run the installer.</li>
+<li>Leave all the default packages selected.†</li>
+<li>Go to Devel and select the mingw-gcc-fortran package.‡</li>
+<li>Go to Control Panel\System and Security\System.</li>
+<li>Click on Advanced System Settings.</li>
+<li>Click on Environment Variables.</li>
+<li>Edit the path and add C:\cygwin64\bin to the end (use a semicolon to separate entries).</li>
+</ol>
+<p>†You can always run the set-up again to install additional packages at a later date.</p>
+<p>‡You might as well install the other compilers you are likely to need like GCC while you're at it.</p>
+<h3>Installing Bayesian Packages</h3>
+<p>Currently the dependency <a target="_blank" href="https://pypi.python.org/pypi/h5py">h5py</a> needs to installed from a pre-compiled binary on windows.</p>
+<ol><li>Install h5py for your version of Windows.</li></ol>
+<p>Running pip install bayespy should now work like a charm.</p>
+<h3>Avoiding pip</h3>
+<p>If you aren't fussed about ensuring the pip works on your machine you can download <a target="_blank" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">individual packages that have been pre-compiled</a> for Windows.</p>
+<h3>References</h3>
+<p>[1] <a target="_blank" href="https://www.python.org/">Python.org</a></p>
+<p>[2] <a target="_blank" href="https://nbviewer.ipython.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Prologue/Prologue.ipynb">Probabilistic Programming and Bayesian Methods for Hackers</a></p>
+<p>[3] Patil A, Fonnesbeck CJ (2010). <a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3097064/">PyMC: Bayesian Stochastic Modelling in Python</a>. J Stat Softw 35: 1.</p>
+<p>[4] <a target="_blank" href="https://github.com/pymc-devs/pymc">PyMC</a></p>
+<p>[5] <a target="_blank" href="https://www.bayespy.org/en/latest/">BayesPy</a></p>
+<p>[6] Downey, AB (2012). <a target="_blank" href="https://www.greenteapress.com/thinkbayes/thinkbayes.pdf">Think Bayes</a>. Needham: Green Tea Press.</p>
+</body></html>

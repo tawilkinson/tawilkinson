@@ -1,0 +1,60 @@
+---
+layout: post
+title: Gentoo 64-bit
+categories:
+- Linux
+- Tinker
+tags:
+- 64 bit
+- Dell
+- Dell Inspiron 1525
+- Gentoo
+- installation
+- OS
+status: publish
+type: post
+published: true
+meta: {}
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div class="sqs-image sqs-empty"><div class="sqs-image-content"></div></div>
+<p id="yui_3_17_2_1_1436546053698_385521">So guess what I was up to last night - yes that's right, installing Gentoo.</p>
+<p id="yui_3_17_2_1_1436546053698_385524">This was my first time installing Gentoo on 64-bit architecture - the important specs are below:</p>
+<ul id="yui_3_17_2_1_1436546053698_385527">
+<li>Intel Core i7 2600k Processor (Sandy Bridge - important later)</li>
+<li>8 GB DDR3 RAM</li>
+<li>Asus P8Z68-V PRO/GEN3 Motherboard</li>
+<li>250 GB HDD (well 250 GB partition out of the 4 TB in my machine)</li>
+<li>Nvidia GeForce GTS 450 GPU</li>
+<li>Blu-Ray recorder drive</li>
+</ul>
+<p id="yui_3_17_2_1_1436546053698_385541">Also worth noting that this is a dual boot with Windows 7.</p>
+<p id="yui_3_17_2_1_1436546053698_385544">[WARNING - If you're not interested in Linux or computer geekery I expect you will find the rest of this post boring]</p>
+<p id="yui_3_17_2_1_1436546053698_385547">I followed the Gentoo documentation found here: <a href="http://static1.squarespace.com/static/55397e91e4b0061c5889b3f0/556839abe4b0d9163c0ffd27/556839d4e4b0d9163c1005e6/1414664816000/handbook?format=original">http://www.gentoo.org/doc/en/handbook/</a> I will be noting any differences between that guide and my install here.</p>
+<p id="yui_3_17_2_1_1436546053698_385553"><strong>Choosing the Right Installation Medium</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385557">I downloaded the LiveCD and used that as my initial Linux environment for installing from.</p>
+<p id="yui_3_17_2_1_1436546053698_385560"><strong>Configuring your Network</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385564">All done through DHCP.</p>
+<p id="yui_3_17_2_1_1436546053698_385567"><strong>Preparing the Disks</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385571">I used the standard layout of boot, swap and root partitions but on /dev/sdb2 to /dev/sdb4 because of my dual booting. I set my swap partition to 20 GB following advice I found online. Then annoyingly the LiveCD made me reboot in order to write the changes. The I used the standard filesystems.</p>
+<p id="yui_3_17_2_1_1436546053698_385574"><strong>Installing the Gentoo Installation Files</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385578">The -march option in CFLAGS needs to be native or corei7-avx because of the Sandy Bridge architecture. I used MAKEOPTS="-j5" as it's a quad core processor.</p>
+<p id="yui_3_17_2_1_1436546053698_385581"><strong>Installing the Gentoo Base System</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385585">I selected the default amd64 profile. I set up my USE flags with KDE in mind so -gnome and -gtk were used. I also added the bluray flag.</p>
+<p id="yui_3_17_2_1_1436546053698_385588"><strong>Configuring the Kernel</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385592">I mostly followed the guide but later I had to come back and recompile without some Nvidia options: <a href="http://static1.squarespace.com/static/55397e91e4b0061c5889b3f0/556839abe4b0d9163c0ffd27/556839d4e4b0d9163c1005ed/1414664818000/nvidia-guide.xml?format=original">http://www.gentoo.org/doc/en/nvidia-guide.xml#doc_chap3</a></p>
+<p id="yui_3_17_2_1_1436546053698_385597"><strong>Configuring your System</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385601">I always set my hostname to be the name of a famous fictional computer - this time I went for Ozymandias (<a href="http://static1.squarespace.com/static/55397e91e4b0061c5889b3f0/556839abe4b0d9163c0ffd27/556839d4e4b0d9163c100600/1414664818000/List_of_fictional_computers?format=original">http://en.wikipedia.org/wiki/List_of_fictional_computers#1990s</a>)</p>
+<p id="yui_3_17_2_1_1436546053698_385607">I set my locale to be en_GB.UTF-8.</p>
+<p id="yui_3_17_2_1_1436546053698_385610"><strong>Installing Necessary System Tools</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385614">I chose to get syslog-ng, vixie-cron, mlocate, dhcpcd and ppp.</p>
+<p id="yui_3_17_2_1_1436546053698_385617"><strong>Configuring the Bootloader</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385621">I used GRUB and followed the standard set-up except for a timeout of 10 seconds and replacing Windows XP with Windows 7. I also had to ensure to make the boot device hd1,1 and root=/dev/sdb4.</p>
+<p id="yui_3_17_2_1_1436546053698_385624"><strong>Finalizing your Gentoo Installation</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385628">I made my user with nearly all the groups (N.B. games doesn't work - is it depreciated?)</p>
+<p id="yui_3_17_2_1_1436546053698_385631"><strong>Where to go from here?</strong></p>
+<p id="yui_3_17_2_1_1436546053698_385635">By the time I left for work this morning I had also emerged X-org and KDE 4.8.3 and had managed to get startx to not crash while going to a black screen. I'm going to have to work on my xorg.conf this evening and hopefully I'll get a working one running. This will be useful as Googling doesn't currently give a working one for my 42" TV and graphics card via HDMI. I hope people might find that useful :)</p>
+<p id="yui_3_17_2_1_1436546053698_385638">Tom out!</p>
+<p id="yui_3_17_2_1_1436546053698_385641">P.S. <a href="http://static1.squarespace.com/static/55397e91e4b0061c5889b3f0/556839abe4b0d9163c0ffd27/556839d4e4b0d9163c100612/1414664818000/www.gentoo.org?format=original">http://www.gentoo.org/</a></p>
+</body></html>

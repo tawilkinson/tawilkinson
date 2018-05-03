@@ -1,0 +1,87 @@
+---
+layout: post
+title: 'Word 2010: How to Insert Numbered Equations Properly'
+categories:
+- LaTeX
+- PhD
+- Tinker
+- Windows
+tags:
+- academia
+- research
+- software
+- Word 2010
+status: publish
+type: post
+published: true
+meta:
+  _thumbnail_id: '63'
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p id="yui_3_17_2_1_1436532691650_181588"><em>In which I run through a useful tip that Microsoft managed to just miss explaining...</em></p>
+<h3 id="yui_3_17_2_1_1436532691650_181592">The Problem</h3>
+<p id="yui_3_17_2_1_1436532691650_181595">If you, like me, are in the process of writing a long scientific document which requires multiple reviewers to be able to view changes you may sadly be saddled with using <a href="http://office.microsoft.com/en-us/word/" target="_blank">Microsoft Word</a>.* Now, in defence of Microsoft, they have definitely improved the way Word works. Using track changes, <a href="http://www.mendeley.com/" target="_blank">Mendeley</a> and with a little bit of tinkering you can have a passable writing experience and be able to send documents out for review by your supervisors. They've even included an equation editor that allows you to put equations in your document and save them for later use.</p>
+<p id="yui_3_17_2_1_1436532691650_181604">Sadly in formal scientific writing we often like things to look nice, pretty and numbered like this:</p>
+<img src="https://lh5.googleusercontent.com/-4NrmBWzGiLU/UoUG_UGYsEI/AAAAAAAAAkU/h7gsWG40qBM/w707-h67-no/spin+echo.png" title="" alt=""><p>This isn't natively supported in Word but Microsoft have provided a simple hack for you.</p>
+<p>*I know at least one of my readers will suggest using $latex LaTeX and <a target="_blank" href="http://git-scm.com/">Git</a> (or something along those lines). Believe me I wish I could convince my supervisors of that.</p>
+<h3>Microsoft's Solution</h3>
+<p><em><a target="_blank" href="https://web.archive.org/web/20131114202430/http://blogs.office.com/b/microsoft-word/archive/2006/10/20/equation-numbering.aspx">This is a re-write of Microsoft's solution which can be found by clicking on this block of text</a>.</em>[2]</p>
+<ul>
+<li>Open "Table Properties".</li>
+<li>On the "Table" tab set the "Preferred Width" to 100%.</li>
+<li>On the "Column" tab set  Column 1 &amp; 3 to 15% and Column 2 to 70%</li>
+<li>On the "Cell" tab set all columns to have "Center" as their vertical alignment.†</li>
+<li>Hide table borders.</li>
+<li>Make a multi-level list. <em><strong>Don't do this - see below!</strong></em>
+</li>
+<li>Change the spacing after the table to be the same as that for your body text.</li>
+<li>Insert any old equation in the central cell.</li>
+<li>Highlight the whole table.</li>
+<li>Go to "Equation Tools" on the ribbon.</li>
+<li>From the "Equation" drop-down select "Save Selection to Equation Gallery..."</li>
+<li>Whenever you wish to use this again in the future just use the "Insert"&gt;"Equation" dialog to select your new building block.</li>
+</ul>
+<p>†So I lied - I've changed a few other minor things too.</p>
+<h3>My Addendum</h3>
+<p>So the Microsoft method does make nice looking equations with numbering that auto-updates within your document. Job done? Well not quite. The problem with this method is that cross-referencing to a general numbered item in Word doesn't work very well. You want to be able to cross-reference specifically to a numbered equation and have the equation number appear as hyper-linked text. The Microsoft method above doesn't do this.</p>
+<p>Instead at step 7 above make the following changes:</p>
+  
+      <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55a6f27be4b08fd8601c7628_1437004413972__img.png_" alt="">
+  
+
+<ul>
+<li>Make sure "Exclude label from caption" is selected.</li>
+<li>Click OK.</li>
+</ul>
+  
+      <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55a6f2c9e4b0116b19610bc5_1437004491098__img.png_" alt="">
+  
+
+<ul>
+<li>The number will appear below your formula, highlight it and cut and paste to the right most cell.</li>
+<li>The formatting will be wrong so highlight it and format it as normal body text.</li>
+</ul>
+  
+      <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55a6f2dde4b0af1ebb5ca00c_1437004511431__img.png_" alt="">
+  
+
+<ul>
+<li>Add parentheses and other formatting either side of the number as desired.</li>
+<li>You will notice the text is still in the wrong part of the cell. Set the cell alignment to "Center" both horizontally and vertically.</li>
+</ul>
+  
+      <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55a6f301e4b00e349db7a850_1437004547276__img.png_" alt="">
+  
+
+<p id="yui_3_17_2_22_1436996827544_15371"><br></p>
+<ul id="yui_3_17_2_22_1436996827544_15370">
+<li id="yui_3_17_2_22_1436996827544_15369">If this doesn't centre everything correctly add some spacing (I used 18pt) before the paragraph in "Paragraph" settings.</li>
+<li>Then follow the rest of Microsoft's post.</li>
+</ul>
+<p>That should work nicely and allow you to cross-reference all your equation as equations in the future. Hope this is useful!</p>
+<p>Tom Out!</p>
+<h3>References</h3>
+<p>[1]  K. King, 1983. <em>Signal-to-noise ratios in nuclear magnetic resonance imaging (NMR).</em> Ph.D. thesis, The University of Wisconsin - Madison, Wisconsin, United States.</p>
+<p>[2] Word Blog, 2006. <a data-cke-saved-href="http://blogs.office.com/b/microsoft-word/archive/2006/10/20/equation-numbering.aspx" href="http://blogs.office.com/b/microsoft-word/archive/2006/10/20/equation-numbering.aspx" target="_blank"><em>Equation Numbering</em></a>. [online] Available at: <a data-cke-saved-href="http://blogs.office.com/b/microsoft-word/archive/2006/10/20/equation-numbering.aspx" href="http://blogs.office.com/b/microsoft-word/archive/2006/10/20/equation-numbering.aspx" target="_blank">http://blogs.office.com/b/microsoft-word/archive/2006/10/20/equation-numbering.aspx</a> [Accessed November 14 2013].</p>
+</body></html>

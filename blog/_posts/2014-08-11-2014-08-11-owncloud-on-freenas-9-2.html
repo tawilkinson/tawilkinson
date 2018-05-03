@@ -1,0 +1,218 @@
+---
+layout: post
+title: Owncloud on FreeNAS 9.2
+categories:
+- Tinker
+tags:
+- Cloud computing
+- File sharing
+- FreeBSD
+- FreeNAS
+- MariaDB
+- MySQL
+- Nginx
+- Open source
+- OwnCloud
+- PHP
+- SQLite
+- topslider
+- web server
+status: publish
+type: post
+published: true
+meta:
+  _thumbnail_id: '363'
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p><em>In which I set-up a cloud file store on <a target="_blank" href="http://freenas.org/">FreeNAS</a>...</em></p>
+<p>So firstly there is an easy way to do this. You can install the <a target="_blank" href="http://owncloud.org/">owncloud</a> plugin provided through the FreeNAS GUI. There are a few reasons not to do this:</p>
+<ul>
+<li>It only supports <a target="_blank" href="http://sqlite.org/">SQLite</a>
+</li>
+<li>The plugin, as usual, is not the most up-to-date version of the software*</li>
+</ul>
+<p><a target="_blank" href="http://www.mysql.com/">MySQL</a>/MariaDB should be faster than SQLite and also allows multiple concurrent connections.</p>
+<p>*The FreeNAS devs do a good job of keeping up-to-date but if you want to be on the latest software you normally need to update your plugins manually.</p>
+<h3>Set-Up the Jail</h3>
+<p>Follow the <a target="_blank" href="http://web.freenas.org/images/resources/freenas9.2.1/freenas9.2.1_guide.pdf">users guide</a> to set up a new jail. You can either set-up a portjail (which already includes and extracted version of ports) or use a standard jail (since you would likely need to update ports anyway).</p>
+<p>The use the GUI to run a shell as the jail before continuing to issue these commands.</p>
+<p>Extract ports:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">portsnap fetch extract</code></pre>
+<p>Update pkg:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">pkg update -f</code></pre>
+<h2>Install Packages</h2>
+<p>First you're going to need to install all the packages for the webserver (nginx), php and MySQL:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">pkg install nginx mariadb55-server php55-extensions php55-curl\
+php55-exif php55-fileinfo php55-gd php55-mbstring php55-pdo_mysql\
+php55-openssl php55-zip php55-zlib
+make install clean -C /usr/ports/devel/pecl-APCu</code></pre>
+<p>During the install of pecl-APCu accept all prompts with the standard settings.</p>
+<p>Then enable everything in /etc/rc.conf:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">nginx_enable="YES" php_fpm_enable="YES" mysql_enable="YES"</code></pre>
+<h3>Setup Webserver</h3>
+<p>Go to /usr/local/etc/nginx/nginx.conf and edit it to look like this:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class='language-bash"'>### Change the number of workers to the same number of cores 
+### your server has 
+worker_processes 4;
+
+events { 
+    worker_connections 1024; 
+}
+
+http { 
+    include mime.types; 
+    default_type application/octet-stream;
+    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+    access_log logs/access.log main; 
+    sendfile off; 
+    keepalive_timeout 65; 
+    gzip off;
+
+    #SSL 
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+    ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM; 
+    ssl_prefer_server_ciphers on; 
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+
+    # Redirects HTTP to HTTPS 
+    server {
+        listen 80; 
+        ### Change the following two lines to match your website name
+        server_name www.example.com 192.168.; 
+        return 301 https://example.com$request_uri;
+
+        # Prevent Clickjacking 
+        add_header X-Frame-Options "SAMEORIGIN";
+        }
+     server { 
+         listen 443 ssl;
+        ### Change the following line to match your website name
+        server_name www.example.com 192.168.0.X; 
+        root /usr/local/www;
+
+        # Prevent Clickjacking 
+        add_header X-Frame-Options "SAMEORIGIN";
+        # SSL Settings 
+        ### If you are using different names for your SSL certificate and key, change them below: 
+        ssl_certificate /usr/local/etc/nginx/ssl-bundle.crt;
+        ssl_certificate_key /usr/local/etc/nginx/server.key; 
+        add_header Strict-Transport-Security "max-age=16070400;
+        includeSubdomains";
+        location = /robots.txt { allow all; access_log off; log_not_found off; }
+        location = /favicon.ico { access_log off; log_not_found off; }
+        location ^~ /owncloud { 
+            index index.php;
+            try_files $uri $uri/ /index.php?$args;
+            client_max_body_size 5120M; 
+            location ~ ^/owncloud/(?:\.|data|config|db_structure\.xml|README) { 
+                deny all;
+            } 
+            location ~ \.php(?:$|/) { 
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_pass unix:/var/run/php-fpm.sock;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                fastcgi_param PATH_INFO $fastcgi_path_info; 
+                include fastcgi_params;
+                fastcgi_param MOD_X_ACCEL_REDIRECT_ENABLED on;
+            } 
+            location ~* \.(?:jpg|gif|ico|png|css|js|svg)$ {
+                expires max; add_header Cache-Control public;
+            }
+            location ^~ /owncloud/data { 
+                internal;
+                ### Change this to the directory you wish to use for files
+                alias /mnt/files;
+            }
+        }
+    }
+}
+}</code></pre>
+<p>If you have an SSL certificate install it. If you want to use a self-signed certificate use these commands and follow the on screen prompts:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cd /usr/local/etc/nginx 
+openssl genrsa -des3 -out server.key 2048 
+openssl req -new -key server.key -out server.csr 
+openssl x509 -req -days 3650 -in server.csr -signkey server.key -out ssl-bundle.crt 
+cp server.key server.key.orig 
+openssl rsa -in server.key.orig -out server.key</code></pre>
+<p>Configure PHP</p>
+<p>Copy the default php.ini file:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini</code></pre>
+<p>Then edit the following lines of the /usr/local/etc/php.ini file:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-php">date.timezone =Europe/London
+cgi.fix_pathinfo=0 
+upload_max_filesize = 5120M 
+post_max_size = 5120M</code></pre>
+<p>Make sure to set date.timezone to your own<a target="_blank" href="http://php.net/manual/en/timezones.php"> timezone</a>.</p>
+<p>Edit the following lines of /usr/local/etc/php-fpm.conf:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">listen = /var/run/php-fpm.sock 
+listen.owner = www 
+listen.group = www 
+env[PATH] = /usr/local/bin:/usr/bin:/bin</code></pre>
+<h3>Setup MySQL</h3>
+<p>Create the MySQL configuration file at /var/db/mysql/my.cnf:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">[server] socket = /tmp/mysql.sock 
+skip-networking 
+skip-name-resolve 
+default-storage-engine = innodb 
+innodb_flush_method = O_DIRECT 
+skip-innodb_doublewrite 
+innodb_flush_log_at_trx_commit = 2 
+innodb_file_per_table 
+expire_logs_days = 1</code></pre>
+<p>Then start the web server and initilaise the MySQL database:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">service nginx start
+service php-fpm start
+service mysql-server
+start mysql_secure_installation
+mysql -u root -p</code></pre>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-sql">CREATE DATABASE owncloud; 
+GRANT ALL PRIVILEGES ON owncloud.* TO 'ocuser'@'localhost' IDENTIFIED BY 'ocpass'; 
+FLUSH PRIVILEGES; 
+quit;</code></pre>
+<p>Make sure to change &lt;ocpass&gt; to a password of your choice.</p>
+<h3>Install OwnCloud</h3>
+<p>Install the owncloud source files:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">fetch "http://download.owncloud.org/community/owncloud-7.0.1.tar.bz2" 
+tar jxf owncloud-*.tar.bz2 -C /usr/local/www 
+rm owncloud-*.tar.bz2</code></pre>
+<p>Make sure to change the source file to the latest file available from <a target="_blank" href="http://owncloud.org/install/">http://owncloud.org/install/</a>.</p>
+<p>Then ensure the user 'www' can access the mount point for your files and:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">chown -R www:www /usr/local/www/owncloud /mnt/files</code></pre>
+<p>Setup cron:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">crontab -u www -e</code></pre>
+<p>Then append† the following:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">*/15 * * * * /usr/local/bin/php -f /usr/local/www/owncloud/cron.php</code></pre>
+<p>†The vi command is :a. Then use :wq to write and quit.</p>
+<h3>Setup OwnCloud</h3>
+<p>Now point your web browser to https://&lt;jail ip&gt;/owncloud and you'll get this setup screen:</p>
+  
+      <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55829529e4b0f09e120b41d9_1434621229511__img.png_" alt="">
+  
+
+<p id="yui_3_17_2_1_1434547320874_149074">And make sure to change the details to match your mount point and MySQL database.‡</p>
+<p id="yui_3_17_2_1_1434547320874_149077">Once you've logged in go to the Admin settings on the top-right and make sure to tick 'Enforce HTTPS'. This will force anyone connecting to your server to use a secure connection.</p>
+<p id="yui_3_17_2_1_1434547320874_149080">If you already have a lot of data on your server and want to make it available to your OwnCloud then you can make mount points through the FreeNas GUI:</p>
+  
+       <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55829552e4b0eb37cc447c54_1434621267619_owncloud+storage.PNG_" alt="Jail storage in FreeNAS"> Jail storage in FreeNAS 
+  
+
+<p id="yui_3_17_2_1_1434547320874_149086">Currently there is a problem where the FreeNAS GUI can't create a mount point. You'll need to make them using the jail shell. Then the GUI will be able to mount the folder correctly.</p>
+<p id="yui_3_17_2_1_1434547320874_149089">‡Set localhost to be localhost:/tmp/mysql.sock</p>
+<h3 id="yui_3_17_2_1_1434547320874_149092">Allow Access Across the Internet</h3>
+  
+       <img src="/squarespace_images/static_55801e15e4b00ddc71aed22b_5582d68ce4b0c39562640bcf_55829570e4b0eb37cc447c92_1434621297791_owncloud+trusted+domain.PNG_" alt="The error message when accessing owncloud from outside your LAN."> The error message when accessing owncloud from outside your LAN. 
+  
+
+<p>If you wish to use a dynamic DNS service to allow access to your storage from anywhere you will need to add one line to config.php. The file in question is /usr/local/www/owncloud/config/config.php:</p>
+<pre data-preserve-html-node="true"><code data-preserve-html-node="true" class="language-bash">'trusted_domains' =&gt; array('foo.example.com'),</code></pre>
+<p>Tom Out!</p>
+<h3>References</h3>
+<p>This post is an amalgamation of sources that got me most of the way to a working environment. I have chosen the relevant parts from each reference to make this guide:</p>
+<p>[1] <a target="_blank" href="http://forums.freenas.org/index.php?threads/how-to-owncloud-using-nginx-php-fpm-and-mysql.17786/#post-95880">[How-To] ownCloud using NGINX, PHP-FPM, and MySQL</a> by Joshua Parker Ruehlig</p>
+<p>[2] <a target="_blank" href="https://pyd.io/freebsd-nginx-php-fpm/">Pydio: Installing on FreeBSD (nginx and PHP-FPM)</a> by Abstrium SAS</p>
+<p>[3] <a target="_blank" href="http://web.freenas.org/images/resources/freenas9.2.1/freenas9.2.1_guide.pdf">FreeNAS 9.2.1 User's Guide</a>  by iXsystems, Inc</p>
+<p>[4] <a target="_blank" href="http://php.net/manual/en/timezones.php">PHP: List of Supported Timezones</a> by The PHP Group</p>
+<p>[5] <a target="_blank" href="https://forum.owncloud.org/viewtopic.php?f=17&amp;t=20220">Untrusted Domain</a> by RandolphCarter</p>
+</body></html>
