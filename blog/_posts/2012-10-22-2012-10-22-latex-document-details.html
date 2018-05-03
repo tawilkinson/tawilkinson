@@ -30,65 +30,65 @@ usepackage\{ifluatex\}
 usepackage\{ifxetex\}
 usepackage\{ifvtex\}</code></p>
 <p><code>makeatletter</code></p>
-<p><code>newcommand\{ShowOsVersion\}\{%
-immediatewrite18\{systeminfo | findstr /B /C:"OS Version" &gt; OSv.tex\}%
-input\{OSv\}immediatewrite18\{rm OSv.tex\}%
+<p><code>newcommand\{ShowOsVersion\}\{\%
+immediatewrite18\{systeminfo | findstr /B /C:"OS Version" &gt; OSv.tex\}\%
+input\{OSv\}immediatewrite18\{rm OSv.tex\}\%
 \}</code></p>
-<p><code>newcommand\{ShowOsName\}\{%
-immediatewrite18\{systeminfo | findstr /B /C:"OS Name"&gt; OSn.tex\}%
-input\{OSn\}immediatewrite18\{rm OSn.tex\}%
+<p><code>newcommand\{ShowOsName\}\{\%
+immediatewrite18\{systeminfo | findstr /B /C:"OS Name"&gt; OSn.tex\}\%
+input\{OSn\}immediatewrite18\{rm OSn.tex\}\%
 \}</code></p>
-<p><code>newcommand*\{InfoLaTeX\}\{%
+<p><code>newcommand*\{InfoLaTeX\}\{\%
 hologo\{fmtname\} textlessfmtversiontextgreater
 \}
-newcommand*\{InfoTeX\}\{%
+newcommand*\{InfoTeX\}\{\%
 ifxetex
-hologo\{XeTeX\}-%
+hologo\{XeTeX\}-\%
 theXeTeXversionXeTeXrevision
 else
 ifluatex
-hologo\{LuaTeX\}-%
+hologo\{LuaTeX\}-\%
 begingroup
 count@=luatexversion
-dividecount@ by 100 %
-edefx\{thecount@\}%
+dividecount@ by 100 \%
+edefx\{thecount@\}\%
 count@=-xrelax
-multiplycount@ by 100 %
+multiplycount@ by 100 \%
 advancecount@ by luatexversion
 x.thecount@.luatexrevision
 endgroup
 else
-@ifundefined\{pdftexversion\}\{%
+@ifundefined\{pdftexversion\}\{\%
 ifvtex
-hologo\{VTeX\}%
-@ifundefined\{VTeXversion\}\{%
-\}\{%
+hologo\{VTeX\}\%
+@ifundefined\{VTeXversion\}\{\%
+\}\{\%
 begingroup
 count@VTeXversion
-dividecount@ 100 %
+dividecount@ 100 \%
 space vthecount@
-multiplycount@ -100 %
+multiplycount@ -100 \%
 advancecount@VTeXversion
 .two@digitscount@
 endgroup
-\}%
+\}\%
 else
-hologo\{TeX\}%
+hologo\{TeX\}\%
 fi
-\}\{%
-hologo\{pdfTeX\}-%
+\}\{\%
+hologo\{pdfTeX\}-\%
 ifnumpdftexversion thepdftexversion.pdftexrevision
 else
-ifnumpdftexversion expandafter@carthepdftexversion@empty@nil.%
+ifnumpdftexversion expandafter@carthepdftexversion@empty@nil.\%
 expandafter@cdrthepdftexversion@empty@nil
 pdftexrevision
 else
-expandafter@carthepdftexversion@empty@nil.%
-expandafter@cdrthepdftexversion@empty@nil.%
+expandafter@carthepdftexversion@empty@nil.\%
+expandafter@cdrthepdftexversion@empty@nil.\%
 pdftexrevision
 fi
 fi
-\}%
+\}\%
 fi
 fi
 \}</code></p>
