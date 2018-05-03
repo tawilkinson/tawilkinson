@@ -25,44 +25,44 @@ meta: {}
 <h3>Solution</h3>
 <p>After much googling I couldn't figure out how to do this so I asked the kind folks at tex.stackexchange.com and Heiko Oberdiek &amp; Ivan Griffin responded with two macros which I've now combined as follows†:
 <code>
-usepackage{hologo}
-usepackage{ifluatex}
-usepackage{ifxetex}
-usepackage{ifvtex}</code></p>
+usepackage\{hologo\}
+usepackage\{ifluatex\}
+usepackage\{ifxetex\}
+usepackage\{ifvtex\}</code></p>
 <p><code>makeatletter</code></p>
-<p><code>newcommand{ShowOsVersion}{%
-immediatewrite18{systeminfo | findstr /B /C:"OS Version" &gt; OSv.tex}%
-input{OSv}immediatewrite18{rm OSv.tex}%
-}</code></p>
-<p><code>newcommand{ShowOsName}{%
-immediatewrite18{systeminfo | findstr /B /C:"OS Name"&gt; OSn.tex}%
-input{OSn}immediatewrite18{rm OSn.tex}%
-}</code></p>
-<p><code>newcommand*{InfoLaTeX}{%
-hologo{fmtname} textlessfmtversiontextgreater
-}
-newcommand*{InfoTeX}{%
+<p><code>newcommand\{ShowOsVersion\}\{%
+immediatewrite18\{systeminfo | findstr /B /C:"OS Version" &gt; OSv.tex\}%
+input\{OSv\}immediatewrite18\{rm OSv.tex\}%
+\}</code></p>
+<p><code>newcommand\{ShowOsName\}\{%
+immediatewrite18\{systeminfo | findstr /B /C:"OS Name"&gt; OSn.tex\}%
+input\{OSn\}immediatewrite18\{rm OSn.tex\}%
+\}</code></p>
+<p><code>newcommand*\{InfoLaTeX\}\{%
+hologo\{fmtname\} textlessfmtversiontextgreater
+\}
+newcommand*\{InfoTeX\}\{%
 ifxetex
-hologo{XeTeX}-%
+hologo\{XeTeX\}-%
 theXeTeXversionXeTeXrevision
 else
 ifluatex
-hologo{LuaTeX}-%
+hologo\{LuaTeX\}-%
 begingroup
 count@=luatexversion
 dividecount@ by 100 %
-edefx{thecount@}%
+edefx\{thecount@\}%
 count@=-xrelax
 multiplycount@ by 100 %
 advancecount@ by luatexversion
 x.thecount@.luatexrevision
 endgroup
 else
-@ifundefined{pdftexversion}{%
+@ifundefined\{pdftexversion\}\{%
 ifvtex
-hologo{VTeX}%
-@ifundefined{VTeXversion}{%
-}{%
+hologo\{VTeX\}%
+@ifundefined\{VTeXversion\}\{%
+\}\{%
 begingroup
 count@VTeXversion
 dividecount@ 100 %
@@ -71,12 +71,12 @@ multiplycount@ -100 %
 advancecount@VTeXversion
 .two@digitscount@
 endgroup
-}%
+\}%
 else
-hologo{TeX}%
+hologo\{TeX\}%
 fi
-}{%
-hologo{pdfTeX}-%
+\}\{%
+hologo\{pdfTeX\}-%
 ifnumpdftexversion thepdftexversion.pdftexrevision
 else
 ifnumpdftexversion expandafter@carthepdftexversion@empty@nil.%
@@ -88,20 +88,20 @@ expandafter@cdrthepdftexversion@empty@nil.%
 pdftexrevision
 fi
 fi
-}%
+\}%
 fi
 fi
-}</code></p>
+\}</code></p>
 <p>I then call this at the end of my document with:</p>
 <p><code>
 appendix
-chapter{Document Details}
+chapter\{Document Details\}
 </code></p>
 <p><code>Compiled by: InfoTeX 
-hologo{LaTeX} version: InfoLaTeX 
+hologo\{LaTeX\} version: InfoLaTeX 
 ShowOsName 
 ShowOsVersion</code></p>
-<p>end{document}</p>
+<p>end\{document\}</p>
 <p>This produces the following output:</p>
 <h5>Compiled by: pdf $latex TeX$-1.40.13
 $latex LaTeX$ version: $latex LaTeX$2e
