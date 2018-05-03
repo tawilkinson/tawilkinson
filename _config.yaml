@@ -1,0 +1,3 @@
+title: Tinker Tailor Soldier Sponge
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
