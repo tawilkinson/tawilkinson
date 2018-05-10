@@ -53,6 +53,9 @@ h1 {
     color: #8fa650;
 }
 h1.title {
+  color: #878787;
+}
+h1.title:hover {
   color: #D3D2D2;
 }
 h2 {
