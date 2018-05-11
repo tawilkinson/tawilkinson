@@ -7,7 +7,17 @@ div#header {
 }
 div#content {
     margin: 60px auto;
-    width: 70%;
+    width: 60%;
+}
+div#column {
+    float: left;
+    padding: 5px;
+    width: 45%;
+}
+div#row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 nav, footer {
     width: 100%;
@@ -77,4 +87,7 @@ ul.posts {
 }
 ul.posts li {
     list-style: none;
+}
+.container img {
+   width: 100%;
 }
