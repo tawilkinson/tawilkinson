@@ -1,18 +1,23 @@
-body{
+body {
   background-color: #f1f1f1;
 }
+
 nav, footer {
-  background-color:#B0171F;
+  background-color: #B0171F;
 }
+
 h1 {
   color: #6c0e13;
 }
-p,li,a {
+
+p, li, a {
   color: #000000;
 }
+
 nav, footer li {
   color: #000000;
 }
+
 nav ul li:before {
   color: #000000;
 }
