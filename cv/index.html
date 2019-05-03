@@ -10,11 +10,11 @@ title: Curriculum Vitae
 			<li>
 				<span>{{ post.date | date_to_string }}</span>
 				»
-				<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+				<a href="{{ post.url }}.html" title="{{ post.title }}">{{ post.title }}</a>
 			</li>
 			{% if post.content contains site.excerpt_separator %}
 				{{ post.excerpt }}
-				<a href="{{ post.url }}">Read more</a>
+				<a href="{{ post.url }}.html">Read more</a>
 			{% else %}
 				{{ post.content }}
 			{% endif %}
