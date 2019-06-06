@@ -24,6 +24,8 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 addons:
+  ssh_known_hosts:
+    - tawilkinson.duckdns.org
   apt:
     packages:
       - libcurl4-openssl-dev
