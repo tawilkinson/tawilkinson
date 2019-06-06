@@ -10,7 +10,8 @@ before_script:
 script: ./script/cibuild
 
 after_success:
-  - bundle exec travis-custom-deploy sftp service:jekyll
+  - chmod +x script/deploy.sh
+  - script/deploy.sh
 
 # branch whitelist, only for GitHub Pages
 # branches:
@@ -26,7 +27,6 @@ addons:
   apt:
     packages:
       - libcurl4-openssl-dev
-      - ncftp
 
 sudo: false # route your build to the container-based infrastructure for a faster build
 
