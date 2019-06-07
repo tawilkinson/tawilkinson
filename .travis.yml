@@ -4,7 +4,6 @@ rvm:
 before_install:
 - openssl aes-256-cbc -K $encrypted_a9f5478c2cf3_key -iv $encrypted_a9f5478c2cf3_iv
   -in deploy_key.enc -out ./deploy_key -d
-- ssh-add ./deploy_key
 before_script:
 - chmod +x ./script/cibuild
 script: "./script/cibuild"
