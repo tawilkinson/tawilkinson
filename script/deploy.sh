@@ -1,8 +1,8 @@
 #!/bin/bash
 
 eval "$(ssh-agent -s)" # Start the ssh agent
-mkdir ~/.ssh
-echo "$DEPLOY_KEY" > ~/.ssh/id_rsa.pub
-chmod 600 ~/.ssh/id_rsa.pub # This key should have push access
+echo "$DEPLOY_KEY" > deploy_key
+chmod 600 deploy_key # This key should have push access
+mv deploy_key ~/.ssh/id_rsa
 git remote add deploy $REPO_URI
 git push deploy master
