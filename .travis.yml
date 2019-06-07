@@ -2,7 +2,7 @@ language: ruby
 rvm:
 - 2.4.1
 before_install:
-- openssl aes-256-cbc -K $encrypted_da430074a177_key -iv $encrypted_da430074a177_iv
+- openssl aes-256-cbc -K $encrypted_a9f5478c2cf3_key -iv $encrypted_a9f5478c2cf3_iv
   -in deploy_key.enc -out ./deploy_key -d
 - ssh-add ./deploy_key
 before_script:
