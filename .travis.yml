@@ -23,7 +23,7 @@ before_deploy:
 - chmod 600 ./deploy\_rsa
 - ssh-add ./deploy\_rsa
 - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh -vvv $DEPLOY_USER@$DEPLOY_HOST
+- ssh $DEPLOY_USER@$DEPLOY_HOST
 # addons:
 #  ssh_known_hosts:
 #  - tawilkinson.duckdns.org
