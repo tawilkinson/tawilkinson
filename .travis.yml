@@ -22,8 +22,7 @@ before_deploy:
 - eval "$(ssh-agent -s)"
 - chmod 600 ./deploy\_rsa
 - ssh-add ./deploy\_rsa
-- echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh $DEPLOY_USER@$DEPLOY_HOST
+- echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\nPasswordAuthentication no\n" >> ~/.ssh/config
 # addons:
 #  ssh_known_hosts:
 #  - tawilkinson.duckdns.org
