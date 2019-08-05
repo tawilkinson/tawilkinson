@@ -2,8 +2,8 @@ language: ruby
 rvm:
 - 2.4.1
 before_install:
-- openssl aes-256-cbc -K $encrypted_a9f5478c2cf3_key -iv $encrypted_a9f5478c2cf3_iv
-  -in deploy_key.enc -out ./deploy_key -d
+- openssl aes-256-cbc -K $encrypted_b8a0c431e644_key -iv $encrypted_b8a0c431e644_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
 before_script:
 - chmod +x ./script/cibuild
 script: "./script/cibuild"
