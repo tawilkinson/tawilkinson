@@ -1,6 +1,6 @@
 body {
-  background-color: #3d3f40;
-  font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+  background-color: #272B30;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 div#header {
@@ -83,6 +83,12 @@ h1.title {
 
 h1.title:hover {
   color: #D3D2D2;
+}
+
+h1.page-title {
+  color: #D3D2D2;
+  font-size: 62pt;
+  text-align: center;
 }
 
 h2 {
