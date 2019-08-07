@@ -6,13 +6,12 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 apt:
   packages:
-    - rsync
+  - rsync
 before_script:
 - chmod +x ./script/cibuild
 script: "./script/cibuild"
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_b8a0c431e644_key -iv $encrypted_b8a0c431e644_iv
-  -in deploy_rsa.enc -out deploy_rsa -d
+- openssl aes-256-cbc -K $encrypted_b8a0c431e644_key -iv $encrypted_b8a0c431e644_iv -in deploy_rsa.enc -out deploy_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ./deploy\_rsa
 - ssh-add ./deploy\_rsa
