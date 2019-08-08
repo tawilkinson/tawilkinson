@@ -1,3 +1,7 @@
-# tawilkinson.github.io
+# T A Wilkinson
 
-Testbed for replacing TTSS blog away from Squarespace
+[![Build Status](https://travis-ci.org/tawilkinson/tawilkinson.svg?branch=master)](https://travis-ci.org/tawilkinson/tawilkinson)
+
+My personal website:
+- static website
+- generated using Jekyll
