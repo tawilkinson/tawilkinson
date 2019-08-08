@@ -1,8 +1,12 @@
 ---
 layout: rpgs
 title: RPGs
+description: A place for my musings about RPGs
 ---
 <h1>{{ page.title }}</h1>
+<div id="page-description" class="page-description">
+	<p class="">{{page.description}}</p>
+</div>
 <ul class="posts">
 
 	{% for post in site.posts %}

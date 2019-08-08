@@ -1,83 +1,35 @@
-#page-footer-wrapper {
-  background-color: #040102;
-}
-
-#navigation-top {
-  background-color: #040102;
-}
-
-#page-body-wrapper {
+body {
   background-color: #140C1A;
 }
 
-#banner-area-wrapper {
-  background-color: #140C1A;
+nav, footer {
+  background-color: #040102;
 }
 
-#banner-area-wrapper h1 {
-  color: #C362B3 !important;
+h1 {
+  text-align: center;
+  color: #62CB77;
+  font-size: 62px;
 }
 
-#main-navigation {
-  color: #C362B3;
+p, li, a {
+  color: #6FBFCC;
 }
 
-h1.entry-title a {
-  color: #C362B3;
+nav a {
+  color: #BFBFBF;
 }
 
-p, h1 {
-  color: #81BFCC !important;
+nav, footer li {
+  color: #BFBFBF;
 }
 
-a {
-  color: #62CB77 !important;
+nav, footer li {
+  color: #040102;
 }
 
-a:hover {
-  color: #CE0D1E !important;
-}
-
-a:visited {
-  color: #62CB77 !important;
-}
-
-i.icon-bookmark {
-  color: #C362B3;
-}
-
-i.icon-tag {
-  color: #C362B3;
-}
-
-i.icon-comment {
-  color: #C362B3;
-}
-
-i.icon-user {
-  color: #C362B3;
-}
-
-ul li a {
-  color: #C362B3;
-}
-
-ul li {
-  color: #C362B3;
-}
-
-ul {
-  color: #C362B3;
-}
-
-.horizontal-navigation-bar nav.main-nav .folder .subnav ul {
-  background-color: #040102
-}
-
-#mobile-navigation {
-  background-color: #040102 !important;
-}
-
-#mobile-navigation-label {
-  background-color: #040102 !important;
+nav ul li:before {
+  content: "/ ";
+  width: 1.2em;
+  color: #6b00b8;
 }

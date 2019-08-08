@@ -7,17 +7,33 @@ nav, footer {
 }
 
 h1 {
+  text-align: center;
   color: #6c0e13;
+  font-size: 62px;
 }
 
 p, li, a {
   color: #000000;
 }
 
+nav a {
+  color: #BFBFBF;
+}
+
 nav, footer li {
-  color: #000000;
+  color: #BFBFBF;
 }
 
 nav ul li:before {
-  color: #000000;
+  content: "/ ";
+  width: 1.2em;
+  color: #6b00b8;
+}
+
+li.title {
+  color: #6c0e13;
+}
+
+li.title:hover {
+  color: #D3D2D2;
 }

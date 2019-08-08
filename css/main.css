@@ -1,15 +1,21 @@
 body {
   background-color: #272B30;
   font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 div#header {
-  margin: auto;
+  text-align: center;
+}
+
+div#page-description {
+  text-align: center;
 }
 
 div#content {
   margin: 60px auto;
-  width: 60%;
+  width: 70%;
 }
 
 div#column {
@@ -27,6 +33,7 @@ div#row:after {
 nav, footer {
   width: 100%;
   background-color: #17191c;
+  border-left: none;
   border-right: none;
 }
 
@@ -39,15 +46,22 @@ nav, footer ul {
 }
 
 nav ul li, footer ul li {
-  list-style: none;
+  list-style: disc;
   display: inline;
+  font-size: medium;
   text-align: center;
   width: 12.5%;
   /* fallback for non-calc() browsers */
   width: calc(100% / 8);
 }
 
-nav, footer ul li:first-child {
+nav ul li:first-child {
+  font-size: xx-large;
+  content: "";
+  border-left: none;
+}
+
+footer ul li:first-child {
   border-left: none;
 }
 
@@ -55,6 +69,21 @@ nav ul li:before {
   content: "/ ";
   width: 1.2em;
   color: #6b00b8;
+}
+
+nav ul li.title:before {
+  content: "";
+  border-left: none;
+}
+
+li.title {
+  color: #878787;
+  padding-right: 30px;
+  padding-left: 0px;
+}
+
+li.title:hover {
+  color: #D3D2D2;
 }
 
 nav, footer ul li a {
@@ -70,25 +99,19 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #ffffff;
 }
 
 h1 {
   color: #8fa650;
-}
-
-h1.title {
-  color: #878787;
-}
-
-h1.title:hover {
-  color: #D3D2D2;
+  margin: 0;
+  font-size: 36px;
 }
 
 h1.page-title {
   color: #D3D2D2;
-  font-size: 62pt;
   text-align: center;
+  font-size: 62px;
 }
 
 h2 {

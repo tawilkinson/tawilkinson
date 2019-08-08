@@ -1,59 +1,35 @@
-#page-footer-wrapper {
-  background-color: #114D4D !important;
+body {
+  background-color: #E0E4CE;
 }
 
-#navigation-top {
-  background-color: #114D4D !important;
+nav, footer {
+  background-color: #114D4D;
 }
 
-#page-body-wrapper {
-  background-color: #E0E4CE !important;
+h1 {
+  text-align: center;
+  color: #27191C;
+  font-size: 62px;
 }
 
-#banner-area-wrapper {
-  background-color: #E0E4CE !important;
+p, li, a {
+  color: #27191C;
 }
 
-#banner-area-wrapper h1 {
-  color: #27191C !important;
+nav a {
+  color: #BFBFBF;
 }
 
-h1.entry-title a {
-  color: #6E9987 !important;
+nav, footer li {
+  color: #BFBFBF;
 }
 
-p, li, h1 {
-  color: #27191C !important;
+nav, footer li {
+  color: #27191C;
 }
 
-a {
-  color: #6E9987 !important;
-}
-
-i.icon-bookmark {
-  color: #114D4D !important;
-}
-
-i.icon-tag {
-  color: #114D4D !important;
-}
-
-i.icon-comment {
-  color: #114D4D !important;
-}
-
-i.icon-user {
-  color: #114D4D !important;
-}
-
-.horizontal-navigation-bar nav.main-nav .folder .subnav ul {
-  background-color: #114D4D
-}
-
-#mobile-navigation {
-  background-color: #114D4D !important;
-}
-
-#mobile-navigation-label {
-  background-color: #114D4D !important;
+nav ul li:before {
+  content: "/ ";
+  width: 1.2em;
+  color: #6b00b8;
 }
