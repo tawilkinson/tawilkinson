@@ -33,3 +33,7 @@ nav ul li:before {
   width: 1.2em;
   color: #6b00b8;
 }
+
+li.title {
+  color: #6E9987;
+}
