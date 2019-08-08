@@ -1,4 +1,4 @@
 title: Tinker Tailor Soldier Sponge
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+permalink: /:categories/:year/:month/:day/:title
 exclude: [vendor]
