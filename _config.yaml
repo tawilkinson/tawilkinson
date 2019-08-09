@@ -2,5 +2,6 @@ title: Tinker Tailor Soldier Sponge
 markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title
 exclude: [vendor]
+excerpt_separator: <!--more-->
 plugins:
 - "jekyll-sitemap"
