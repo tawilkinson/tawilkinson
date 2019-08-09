@@ -28,12 +28,24 @@ nav, footer li {
   color: #040102;
 }
 
-nav ul li:before {
+nav ul li.nav:before {
   content: "/ ";
   width: 1.2em;
-  color: #6b00b8;
+  color: #62CB77;
 }
 
-li.title {
+a.title {
+  color: #1F6D53;
+}
+
+a.title:hover {
   color: #62CB77;
+}
+
+#icon {
+   fill: #1F6D53;
+}
+
+#icon:hover {
+   fill: #62CB77;
 }

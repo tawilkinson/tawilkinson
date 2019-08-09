@@ -6,7 +6,7 @@
 	<!-- link to main stylesheet -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
-	<link rel="stylesheet" type="text/css" href="/css/cv.css">
+	<link rel="stylesheet" href="/css/flickity.css" media="screen">
 </head>
 
 <body>
@@ -16,11 +16,12 @@
 				<li class="title"><a class="title" href="/">T A WILKINSON</a></li>
 				<li class="nav"><a href="/">Home</a></li>
 				<li class="nav"><a href="/now.html">Now</a></li>
-				<li class="nav"><a class="currentLink" href="/cv">CV</a></li>
+				<li class="nav"><a href="/cv">CV</a>
+				</li>
 				<li class="nav"><a href="/scifi">Author</a></li>
 				<li class="nav"><a href="/rpgs">RPGs</a></li>
 				<li class="nav"><a href="https://tinkertailorsoldiersponge.com">Blog</a></li>
-				<li class="nav"><a href="/podcasts">Podcasts</a></li>
+				<li class="nav"><a class="currentLink" href="/podcasts">Podcasts</a></li>
 				<li class="icon-first"><a href="https://wyl2km.tumblr.com/"><svg width="24px" height="24px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
 							<path id="icon" d="M23.7,25.6c-0.6,0.3-1.7,0.5-2.6,0.6C18.5,26.2,18,24.3,18,23V13h6.4V8.2H18V0c0,0-4.6,0-4.7,0
 								c-0.1,0-0.2,0.1-0.2,0.2c-0.3,2.5-1.4,6.9-6.3,8.6V13H10v10.5c0,3.6,2.6,8.7,9.6,8.5c2.4,0,5-1,5.5-1.9L23.7,25.6z" />
@@ -56,14 +57,16 @@
 		<div class="container">
 			{{ content }}
 		</div>
+		<!-- /.container -->
 	</div>
-	<!-- /.container -->
 	<footer>
-		<ul>
-			<li>
-				<a href="https://github.com/tawilkinson">github.com/tawilkinson</a>
-			</li>
-		</ul>
+		<div class="content">
+			<ul>
+				<li>
+					<a href="https://github.com/tawilkinson">github.com/tawilkinson</a>
+				</li>
+			</ul>
+		</div>
 	</footer>
 </body>
 

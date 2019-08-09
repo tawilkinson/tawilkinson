@@ -6,7 +6,7 @@
 	<!-- link to main stylesheet -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
-	<link rel="stylesheet" type="text/css" href="/css/cv.css">
+	<link rel="stylesheet" href="/css/flickity.css" media="screen">
 </head>
 
 <body>
@@ -15,8 +15,8 @@
 			<ul>
 				<li class="title"><a class="title" href="/">T A WILKINSON</a></li>
 				<li class="nav"><a href="/">Home</a></li>
-				<li class="nav"><a href="/now.html">Now</a></li>
-				<li class="nav"><a class="currentLink" href="/cv">CV</a></li>
+				<li class="nav"><a class="currentLink" href="/now.html">Now</a></li>
+				<li class="nav"><a href="/cv">CV</a></li>
 				<li class="nav"><a href="/scifi">Author</a></li>
 				<li class="nav"><a href="/rpgs">RPGs</a></li>
 				<li class="nav"><a href="https://tinkertailorsoldiersponge.com">Blog</a></li>
@@ -56,14 +56,16 @@
 		<div class="container">
 			{{ content }}
 		</div>
+		<!-- /.container -->
 	</div>
-	<!-- /.container -->
 	<footer>
-		<ul>
-			<li>
-				<a href="https://github.com/tawilkinson">github.com/tawilkinson</a>
-			</li>
-		</ul>
+		<div class="content">
+			<ul>
+				<li>
+					<a href="https://github.com/tawilkinson">github.com/tawilkinson</a>
+				</li>
+			</ul>
+		</div>
 	</footer>
 </body>
 
