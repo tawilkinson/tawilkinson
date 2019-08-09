@@ -35,10 +35,10 @@ nav, footer {
   background-color: #17191c;
   border-left: none;
   border-right: none;
+  display: block;
+  color: #616161;
 }
-
 nav, footer ul {
-  overflow: hidden;
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -65,10 +65,28 @@ footer ul li:first-child {
   border-left: none;
 }
 
-nav ul li.nav:before {
-  content: "/ ";
-  width: 1.2em;
-  color: #8fa650;
+#hoverme{
+position: relative;
+    display: inline-block;
+    text-align: left;
+}
+
+#yeet {
+display:none;
+position: absolute;
+    background: black;
+    text-align: left;
+    padding: 0;
+}
+
+#yeet li {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#hoverme:hover #yeet{
+display:block;
 }
 
 li.title {
@@ -91,6 +109,58 @@ li.title:hover {
   background-image: url(image.png);
 }
 
+li.icon-first {
+  padding-left: 64px;
+}
+
+.nav ul li {
+    font-family: 'Roboto', sans-serif;
+    border-bottom: none;
+    height: 86px;
+    line-height: 86px;
+    font-size: 14px;
+    display: inline-block;
+    float:left;
+    margin: 0 auto;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color:#000000;
+  display: block;
+  transition: .3s background-color;
+  padding:0 24px;
+}
+
+.nav ul li a:hover {
+  background-color: #5c89c7;
+  color:#FFFFFF;
+}
+
+nav ul li.nav:before {
+  content: "/ ";
+  width: 1.2em;
+  color: #8fa650;
+}
+
+.nav li ul {
+    position:absolute;
+    display:none;
+    width:inherit;
+	text-align:left;
+}
+
+.nav li:hover ul {
+    display:block;
+}
+
+.nav ul li ul li {
+  display: block;
+  float:none !important; /* newly added */
+  height:auto; /* newly added */
+  line-height:34px; /* newly added */
+}
+
 #icon {
    fill: #515151;
 }
@@ -99,16 +169,6 @@ li.title:hover {
    fill: #D3D2D2;
 }
 
-li.icon-first {
-  padding-left: 64px;
-}
-
-nav, footer ul li a {
-  display: block;
-  text-decoration: none;
-  color: #616161;
-  padding: 10px 0;
-}
 
 a {
   text-decoration: none;
