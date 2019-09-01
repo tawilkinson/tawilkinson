@@ -42,6 +42,15 @@ a.title:hover {
   color: #27191C;
 }
 
+#navdrop {
+   background: #114D4D;
+}
+
+.nav ul li a:hover {
+  background: #27191C;
+  color:#FFFFFF;
+}
+
 #icon {
    fill: #6E9987;
 }

@@ -6,6 +6,8 @@ body {
 }
 
 div#header {
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -56,40 +58,37 @@ nav ul li, footer ul li {
 }
 
 nav ul li:first-child {
-  font-size: xx-large;
   content: "";
   border-left: none;
 }
 
-footer ul li:first-child {
-  border-left: none;
-}
-
 #hoverme{
-position: relative;
+    position: relative;
     display: inline-block;
     text-align: left;
 }
 
-#yeet {
+#navdrop {
 display:none;
 position: absolute;
-    background: black;
-    text-align: left;
-    padding: 0;
+width: 150%;
+background: #17191c;
+text-align: left;
+padding: 0;
 }
 
-#yeet li {
+#navdrop li {
     display: block;
     width: 100%;
     text-align: left;
 }
 
-#hoverme:hover #yeet{
+#hoverme:hover #navdrop{
 display:block;
 }
 
 li.title {
+  font-size: xx-large;
   color: #515151;
   padding-right: 64px;
   padding-left: 0px;
@@ -121,19 +120,19 @@ li.icon-first {
     font-size: 14px;
     display: inline-block;
     float:left;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .nav ul li a {
   text-decoration: none;
-  color:#000000;
+  color:#bfbfbf;
   display: block;
   transition: .3s background-color;
   padding:0 24px;
 }
 
 .nav ul li a:hover {
-  background-color: #5c89c7;
+  background: #5F869C;
   color:#FFFFFF;
 }
 
@@ -144,9 +143,9 @@ nav ul li.nav:before {
 }
 
 .nav li ul {
-    position:absolute;
-    display:none;
-    width:inherit;
+  position:absolute;
+  display:none;
+  width:inherit;
 	text-align:left;
 }
 
@@ -168,7 +167,6 @@ nav ul li.nav:before {
 #icon:hover {
    fill: #D3D2D2;
 }
-
 
 a {
   text-decoration: none;
