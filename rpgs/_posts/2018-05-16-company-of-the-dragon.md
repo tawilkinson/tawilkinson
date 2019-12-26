@@ -11,6 +11,7 @@ tags:
 - procedurally generated
 status: publish
 type: post
+permalink: /rpgs/company-of-the-dragon
 published: true
 ---
 # {{ page.title }}
