@@ -43,7 +43,7 @@ Uninitiated characters only have access to the unlocked rooms on the ground floo
 
 Once they have completed a mission for the company they can stay in the dormitories and eat & drink for free (equivalent to _Modest living conditions_ from the PHB).
 
-<a href="https://imgur.com/a/7qL1Gf8" ><img src="/assets/img/rpgs/CotD-Ground.png" alt="Click for larger version"/></a>
+<a href="https://imgur.com/a/7qL1Gf8" ><img src="/assets/img/rpgs/CotD-ground.png" alt="Click for larger version"/></a>
 
 ### First Floor
 
