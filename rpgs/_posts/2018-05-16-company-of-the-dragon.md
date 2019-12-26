@@ -49,19 +49,19 @@ Once they have completed a mission for the company they can stay in the dormitor
 
 Until the players have progressed beyond being initiates the majority of these rooms are locked. There are two more dormitories with bunk beds and several bedrooms with nicer beds for more experienced Company members or visitors to stay in.
 
-<Map and details will be filled in when my players reach this point>
+\<Map and details will be filled in when my players reach this point\>
 
 ### Second Floor
 
 Inaccessible to the PCs until they graduate from being initiates.
 
-<Map and details will be filled in when my players reach this point>
+\<Map and details will be filled in when my players reach this point/>
 
 ### Basement
 
 Inaccessible to the PCs until they graduate from being initiates.
 
-<Map and details will be filled in when my players reach this point>
+\<Map and details will be filled in when my players reach this point/>
 
 ## Notable NPCs
 
@@ -81,6 +81,6 @@ Inaccessible to the PCs until they graduate from being initiates.
 ## Tools
 
 The Company of the Dragon interior was designed using <a href="https://hobbyte.net/">Hobbyte's Dungeon Builder</a>. This blog makes no income and so I am able to show these maps here under the terms of my Dungeon Builder license.
-Samuel Bonner's name comes straight from<a href="http://www.artemisgames.co.uk/Productpage.html"> Artemis Games'</a> <a target= href="https://www.rpgnow.com/product/191206/Concept-Cards--Characters?src=hottest_filtered">Character Cards</a>. The character himself is inspired by his card.
+Samuel Bonner's name comes straight from<a href="http://www.artemisgames.co.uk/Productpage.html"> Artemis Games'</a> <a href="https://www.rpgnow.com/product/191206/Concept-Cards--Characters?src=hottest_filtered">Character Cards</a>. The character himself is inspired by his card.
 
 Keep on Adventuring!
