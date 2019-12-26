@@ -18,7 +18,7 @@ _In which I detail our adventurers' base of operations..._
 
 ## The Company of the Dragon
 
-The Company of the Dragon is the most renowned and longest standing adventuring company in <a href="/rpgs/doran">Doran</a>, Hildettar and perhaps the world. Every 5 years or so the Company recruits for new members to join its illustrious ranks.
+The Company of the Dragon is the most renowned and longest standing adventuring company in <a href="/rpgs/doran.html">Doran</a>, Hildettar and perhaps the world. Every 5 years or so the Company recruits for new members to join its illustrious ranks.
 
 At the start of the campaign all of the players need a reason to join the Company. Try your best to be inventive and tailor them to your characters:
 
@@ -67,7 +67,7 @@ Inaccessible to the PCs until they graduate from being initiates.
 
 ### Company Members
 
-- **Krug, Orc Barbarian.** An orphaned orc who was found by a roving warrior band. He eventually made his way to <a href="/rpgs/doran">Doran</a> where he easily proved himself to the Company. He has never sought accommodation outside the Company's walls and is often found in the bar enjoying strong beer or a kind of grog of his own devising. An accomplished fighter he has saved many of his fellow adventurers including, most regularly, "that shiny git" otherwise known as Galavar.
+- **Krug, Orc Barbarian.** An orphaned orc who was found by a roving warrior band. He eventually made his way to <a href="/rpgs/doran.html">Doran</a> where he easily proved himself to the Company. He has never sought accommodation outside the Company's walls and is often found in the bar enjoying strong beer or a kind of grog of his own devising. An accomplished fighter he has saved many of his fellow adventurers including, most regularly, "that shiny git" otherwise known as Galavar.
 - **Galavar, Human Fighter.** The polar opposite of Krug. While he can talk the talk he most certainly cannot walk the walk (at least not as well as he claims). Coming from a noble background he has always had the nicest gear and the shiniest armour. His success is a mixture of dumb luck, natural charm and the expertise of his fellow adventurers. He will claim credit where credit is due (which he thinks is always).
 - **Veronica, Human Paladin.** Gallant, chivalrous and determined. Veronica's parents were killed when she was young and she was taken in by the Temple of Pelor. Instead of restoring to revenge she was driven to make the world a better place so that the same thing will not befall other children. Galavar thinks he'll win her over one day. He is quite mistaken.
 - **Marthys, Elven Wizard.** The most studious in her class at the College of Evocation Marthys doesn't at first glance seem to be the typical adventurer. After 50 years of poring over texts at the college she decided to go out into the world to hunt down obscure scrolls and spells. Despite her bookish nature she is one of the most versatile company members, given enough time, due to her extensive spellbook.
