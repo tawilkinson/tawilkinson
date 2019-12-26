@@ -51,7 +51,7 @@ Until the players have progressed beyond being initiates the majority of these r
 
 <Map and details will be filled in when my players reach this point>
 
-###Second Floor
+### Second Floor
 
 Inaccessible to the PCs until they graduate from being initiates.
 
