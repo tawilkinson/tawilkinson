@@ -151,7 +151,7 @@ li.icon-first {
 nav ul li.nav:before {
   content: "/ ";
   width: 1.2em;
-  color: #8fa650;
+  color: #5D0095;
 }
 
 .nav li ul {
@@ -229,7 +229,7 @@ footer {
 footer ul li:before {
   content: "/ ";
   width: 1.2em;
-  color: #8fa650;
+  color: #5D0095;
 }
 
 ul.posts {
