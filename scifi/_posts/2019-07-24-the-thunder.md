@@ -9,6 +9,7 @@ tags:
 status: publish
 type: post
 published: true
+permalink: /author/poem-the-thunder
 meta: {}
 ---
 

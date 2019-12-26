@@ -18,7 +18,7 @@ tags:
 status: publish
 type: post
 published: true
-permalink: /cv/mr-solutions-ltd
+permalink: /cv/2019/mr-solutions-ltd
 meta:
 structured_content: '{"oembed":{},"overlay":true}'
 ---
