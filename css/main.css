@@ -226,6 +226,12 @@ footer {
   font-size: .8em;
 }
 
+footer ul li:before {
+  content: "/ ";
+  width: 1.2em;
+  color: #8fa650;
+}
+
 ul.posts {
   margin: 20px auto 40px;
   font-size: 1.5em;

@@ -34,6 +34,12 @@ nav ul li.nav:before {
   color: #62CB77;
 }
 
+footer ul li:before {
+  content: "/ ";
+  width: 1.2em;
+  color: #62CB77;
+}
+
 a.title {
   color: #1F6D53;
 }
