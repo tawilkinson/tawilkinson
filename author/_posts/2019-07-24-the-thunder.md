@@ -1,5 +1,5 @@
 ---
-layout: scifi
+layout: author
 title: "Poem: The Thunder"
 categories:
 - author
