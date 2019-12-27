@@ -11,7 +11,7 @@ tags:
 - procedurally generated
 status: publish
 type: post
-permalink: /rpgs/company-of-the-dragon
+permalink: /rpgs/company-of-the-dragon.html
 published: true
 ---
 _In which I detail our adventurers' base of operations..._
