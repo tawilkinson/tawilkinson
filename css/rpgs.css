@@ -6,6 +6,21 @@ nav, footer {
   background-color: #114D4D;
 }
 
+ul.tags li{
+  display:inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.tags li:after {
+  content: ", ";
+}
+
+ul.tags li:last-child:after {
+  content: "";
+}
+
 h1 {
   text-align: center;
   color: #27191C;
@@ -38,6 +53,10 @@ footer ul li:before {
   content: "/ ";
   width: 1.2em;
   color: #27191C;
+}
+
+#separator {
+  border-bottom: 2px solid #27191C;
 }
 
 a.title {

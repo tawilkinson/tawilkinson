@@ -14,7 +14,6 @@ type: post
 permalink: /rpgs/company-of-the-dragon
 published: true
 ---
-# {{ page.title }}
 _In which I detail our adventurers' base of operations..._
 
 ## The Company of the Dragon
@@ -27,6 +26,8 @@ At the start of the campaign all of the players need a reason to join the Compan
 - An unknown ally or admirer puts them forward.
 - They sign up after hearing Simmon's tales of the derring-do and, more importantly, treasure available to successful applicants.
 - A mentor suggests they apply.
+
+<!--more-->
 
 ## Headquarters
 

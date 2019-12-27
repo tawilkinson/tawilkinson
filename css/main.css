@@ -66,6 +66,7 @@ nav ul li, footer ul li {
   width: 12.5%;
   /* fallback for non-calc() browsers */
   width: calc(100% / 8);
+  vertical-align:middle;
 }
 
 nav ul li:first-child {
@@ -102,7 +103,7 @@ display:block;
 li.title {
   font-size: xx-large;
   color: #515151;
-  padding-right: 64px;
+  padding-right: 5%;
   padding-left: 0px;
 }
 
@@ -121,7 +122,7 @@ li.title:hover {
 }
 
 li.icon-first {
-  padding-left: 64px;
+  padding-left: 15%;
 }
 
 .nav ul li {
@@ -233,12 +234,8 @@ footer ul li:before {
 }
 
 ul.posts {
+  padding: 0;
   margin: 20px auto 40px;
-  font-size: 1.5em;
-}
-
-ul.posts li {
-  list-style: none;
 }
 
 .container img {
@@ -294,4 +291,8 @@ div figure{
 
 div figure:nth-of-type(even){
   float:right;
+}
+
+#separator {
+  border-bottom: 2px solid black;
 }

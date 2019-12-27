@@ -24,16 +24,39 @@ nav, footer li {
   color: #BFBFBF;
 }
 
+ul.tags li{
+  display:inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.tags li:after {
+  content: ", ";
+}
+
+ul.tags li:last-child:after {
+  content: "";
+}
+
 nav ul li.nav:before {
   content: "/ ";
   width: 1.2em;
   color: #6c0e13;
 }
 
+#separator {
+  border-bottom: 2px solid #6c0e13;
+}
+
 footer ul li:before {
   content: "/ ";
   width: 1.2em;
   color: #6c0e13;
+}
+
+ul.posts li {
+  list-style: disc;
 }
 
 a.title {
@@ -63,7 +86,11 @@ a.title:hover {
 
 div figure{
  float:right;
- width: 30%;
+ width: 25%;
  text-align: center;
  font-style: italic;
+}
+
+#left {
+  float:left;
 }
