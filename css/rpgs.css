@@ -67,10 +67,6 @@ a.title:hover {
   color: #27191C;
 }
 
-a.currentLink{
-  color: #000000 !important;
-}
-
 #navdrop {
    background: #114D4D;
 }
@@ -120,6 +116,10 @@ h1 {
 
 a {
   color: #6E9987 !important;
+}
+
+a.currentLink{
+  color: #575757 !important;
 }
 
 i.icon-bookmark {
