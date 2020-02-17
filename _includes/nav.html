@@ -1,14 +1,16 @@
+{% assign current = page.url | downcase | split: '/' %}
+
 <nav>
   <ul>
     <li class="title"><a class="title" href="/">T A WILKINSON</a></li>
-    <li class="nav"><a href="/">Home</a></li>
-    <li class="nav"><a href="/now.html">Now</a></li>
-    <li class="nav"><a href="/cv">CV</a></li>
-    <li class="nav"><a href="/author">Author</a></li>
-    <li class="nav"><a href="/rpgs">RPGs</a></li>
-    <li class="nav"><a href="/voice.html">Voice</a></li>
+    <li class="nav"><a href="/" {% if current == empty %}class='currentLink' {% endif %}>Home</a></li>
+    <li class="nav"><a href="/now.html" {% if current[1] == 'now' %}class='currentLink' {% endif %}>Now</a></li>
+    <li class="nav"><a href="/cv" {% if current[1] == 'cv' %}class='currentLink' {% endif %}>CV</a></li>
+    <li class="nav"><a href="/author" {% if current[1] == 'author' %}class='currentLink' {% endif %}>Author</a></li>
+    <li class="nav"><a href="/rpgs" {% if current[1] == 'rpgs' %}class='currentLink' {% endif %}>RPGs</a></li>
+    <li class="nav"><a href="/voice.html" {% if current[1] == 'voice' %}class='currentLink' {% endif %}>Voice</a></li>
     <li class="nav"><a href="https://tinkertailorsoldiersponge.com">Blog</a></li>
-    <li class="nav" id="hoverme"><a href="/podcasts">Podcasts</a>
+    <li class="nav" id="hoverme"><a href="/podcasts" {% if current[1] == 'podcasts' %}class='currentLink' {% endif %}>Podcasts</a>
       <ul id="navdrop">
         <li><a href="https://tinkertailorsoldiersponge.com/astracast">AstraCast</a></li>
         <li><a href="https://drwilko.org">Dr Wilko's</a></li>

@@ -83,7 +83,7 @@ nav ul li:first-child {
 #navdrop {
 display:none;
 position: absolute;
-width: 150%;
+width: 100%;
 background: #17191c;
 text-align: left;
 padding: 0;
