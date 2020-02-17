@@ -67,6 +67,10 @@ a.title:hover {
   color: #27191C;
 }
 
+a.currentLink{
+  color: #000000 !important;
+}
+
 #navdrop {
    background: #114D4D;
 }
