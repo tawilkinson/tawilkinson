@@ -6,3 +6,9 @@ excerpt_separator: <!--more-->
 plugins:
 - "jekyll-sitemap"
 - "jekyll-redirect-from"
+- "jekyll-feed"
+feed:
+  categories:
+    - cv
+    - author
+    - RPG
