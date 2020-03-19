@@ -7,6 +7,7 @@ plugins:
 - "jekyll-sitemap"
 - "jekyll-redirect-from"
 - "jekyll-feed"
+- "jekyll-seo-tag"
 feed:
   categories:
     - cv
