@@ -26,7 +26,7 @@ structured_content: '{"oembed":{},"overlay":true}'
 <a href="http://www.mrsolutions.com/"><img src="/assets/img/cv/mrsolutions.png" alt="MR Solutions Ltd logo"/></a>
 </figure>
 
-I work for <a href="http://www.mrsolutions.com/">MR Solutions</a> as a Customer Support Manager &amp; Applications Developer. In this role I have gained experience in:
+I worked for <a href="http://www.mrsolutions.com/">MR Solutions</a> as a Customer Support Manager &amp; Applications Developer. In this role I gained experience in:
 - Coding in Python for use on a Windows platform
 - Pulse Sequence Development
 - Customer Support
@@ -34,11 +34,13 @@ I work for <a href="http://www.mrsolutions.com/">MR Solutions</a> as a Customer 
 
 ### Pulse Sequence Development
 
-I have continued to work on Pulse Sequence development.
+I continued to work on Pulse Sequence development. Mostly focussing on:
+- MPRAGE
+- Image-Selected In vivo Spectroscopy (ISIS)
 
 ### Customer Support
 
-I regularly provide customer support. I have been integral in implementing Jira and Bitbucket within the company. My customer support responsibilities include:
+I regularly provided customer support. I was integral in implementing Jira and Bitbucket within the company. My customer support responsibilities included:
 - remote software support
 - hardware testing
 - on-site hardware support
