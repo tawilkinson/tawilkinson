@@ -24,3 +24,8 @@ Unfortunately, the Player Kit above is not form fillable which is not so useful 
 - [Agon Player Kit, Form Fillable](/assets/docs/Agon_Playerkit_Fillable.pdf)
 
 \* Technically it's a second edition but it has been a while since the first edition came out.
+
+### Changelog
+
+- 24/10/2020 - Fixed linked rows on the Player Kit that made it impossible to fill out Island Destinies correctly
+- 23/10/2020 - First version
