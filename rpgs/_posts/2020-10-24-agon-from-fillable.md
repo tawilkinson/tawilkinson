@@ -13,7 +13,7 @@ permalink: /rpgs/agon.html
 ---
 ## Agon
 <figure width="40%">
-<img src="http://www.agon-rpg.com/agon_title_new.jpg" alt="Agon logo"/>
+<img src="/assets/img/rpgs/agon_title_new.jpg" alt="Agon logo"/>
 </figure>
 
 [Agon](http://www.agon-rpg.com/) is an excellent new\* Indie RPG where you explore islands inspired by Greek myths in a misty and mysterious sea. It's quick and easy to pick up and makes for perfect one shots as well as an ongoing campaign. I'd highly recommend checking it out via the link at the start of this paragraph where the Player Kit is provided for free.
