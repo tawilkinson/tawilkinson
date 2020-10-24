@@ -1,0 +1,26 @@
+---
+layout: rpgs
+title: "Agon: Form Fillable PDFs"
+category:
+- RPG
+tags:
+- Agon
+- pdf
+status: publish
+type: post
+published: true
+permalink: /rpgs/agon.html
+---
+## Agon
+<figure width="40%">
+<img src="http://www.agon-rpg.com/agon_title_new.jpg" alt="Agon logo"/>
+</figure>
+
+[Agon](http://www.agon-rpg.com/) is an excellent new\* Indie RPG where you explore islands inspired by Greek myths in a misty and mysterious sea. It's quick and easy to pick up and makes for perfect one shots as well as an ongoing campaign. I'd highly recommend checking it out via the link at the start of this paragraph where the Player Kit is provided for free.
+
+Unfortunately, the Player Kit above is not form fillable which is not so useful when playing remotely. I've made up a form fillable version of the full Player Kit and also just the character sheet and guide:
+
+- [Agon Character Sheet, Form Fillable](/assets/docs/Agon_Character_Sheet_Fillable.pdf)
+- [Agon Player Kit, Form Fillable](/assets/docs/Agon_Playerkit_Fillable.pdf)
+
+\* Technically it's a second edition but it has been a while since the first edition came out.
