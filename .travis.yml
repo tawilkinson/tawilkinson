@@ -4,10 +4,8 @@ rvm:
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-apt:
-  packages:
-  - rsync
 before_script:
+- sudo apt-get -y install rsync
 - chmod +x ./script/cibuild
 script: "./script/cibuild"
 before_deploy:
@@ -16,7 +14,6 @@ before_deploy:
 - chmod 600 ./deploy\_rsa
 - ssh-add ./deploy\_rsa
 - echo -e "Host $DEPLOY_HOST\n\tStrictHostKeyChecking no\nPasswordAuthentication no\n" >> ~/.ssh/config
-sudo: false
 cache: bundler
 deploy:
   provider: script
