@@ -7,4 +7,6 @@ gem "rake"
 gem "html-proofer"
 gem "wdm", ">= 0.1.0"
 gem "jekyll-feed"
-gem 'jekyll-seo-tag'
+gem "jekyll-seo-tag"
+gem "kramdown"
+gem "kramdown-parser-gfm"
