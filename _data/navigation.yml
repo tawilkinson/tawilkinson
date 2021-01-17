@@ -1,0 +1,16 @@
+# main links
+main:
+  - title: "Now"
+    url: "/now.html"
+  - title: "CV"
+    url: "/cv"
+  - title: "Writing"
+    url: "/writing"
+  - title: "RPGs"
+    url: "/rpgs"
+  - title: "Voice"
+    url: "/voice.html"
+  - title: "Blog"
+    url: "https://tinkertailorsoldiersponge.com"
+  - title: "Podcasts"
+    url: "/podcasts"

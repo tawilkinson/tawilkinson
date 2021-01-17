@@ -1,5 +1,5 @@
 ---
-layout: cv
+layout: single
 title: "King's College London: Research Fellow"
 category:
 - cv
@@ -19,6 +19,9 @@ published: true
 permalink: /cv/2020/kcl.html
 meta:
 structured_content: '{"oembed":{},"overlay":true}'
+date: 2020-04-06
+header:
+  teaser: "/assets/img/cv/kcl-logo.svg"
 ---
 <figure>
 <a href="https://www.kcl.ac.uk/people/thomas-wilkinson"><img src="/assets/img/cv/kcl-logo.svg" style="width:80%" alt="King's College London Logo"/></a>

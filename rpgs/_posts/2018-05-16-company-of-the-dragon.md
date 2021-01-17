@@ -1,5 +1,5 @@
 ---
-layout: rpgs
+layout: single
 title: "Company of the Dragon: Headquarters"
 category:
 - RPG
@@ -13,6 +13,8 @@ status: publish
 type: post
 permalink: /rpgs/company-of-the-dragon.html
 published: true
+header:
+  teaser: "/assets/img/rpgs/CotD-ground.png" 
 ---
 _In which I detail our adventurers' base of operations..._
 

@@ -1,15 +1,112 @@
-title: Tinker Tailor Soldier Sponge
+title: T A Wilkinson
+subtitle: My personal home on the web
+name: T A Wilkinson
+url: https://tawilkinson.com
+repository: tawilkinson/tawilkinson
+logo: /favicon-196x196.png
+og_image: /favicon-196x196.png
+theme: minimal-mistakes-jekyll
+locale: en-GB
+minimal_mistakes_skin: "dark"
 markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title
 exclude: [vendor]
 excerpt_separator: <!--more-->
+search: true
+timezone: Europe/London
+twitter:
+  username: "ta_wilkinson"
+social:
+  type:  Person
+  name:  # If the user or organization name differs from the site's name
+  links:
+    - "https://twitter.com/ta_wilkinson"
+    - "https://instagram.com/t_a_wilkinson"
+    - "https://www.linkedin.com/in/tawilkinson"
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-44465932-2"
+    anonymize_ip: false
+author:
+  name: "T A Wilkinon"
+  avatar: "/favicon-196x196.png"
+  bio: "I'm a Research Fellow working in Ultra High Field MRI. I also blog and make podcasts."
+  location: "London, UK"
+  links:
+  - label: "T A Wilkinson"
+    icon: "fas fa-fw fa-link"
+    url: "https://tawilkinson.com"
+  - label: "Twitter"
+    icon: "fab fa-fw fa-twitter-square"
+    url: "https://twitter.com/ta_wilkinson"
+  - label: "GitHub"
+    icon: "fab fa-fw fa-github"
+    url: "https://github.com/tawilkinson"
+  - label: "Instagram"
+    icon: "fab fa-fw fa-instagram"
+    url: "https://instagram.com/t_a_wilkinson"
+footer:
+  links:
+    - label: "Favicon by the talented alys.creative"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/alys.creative"
 plugins:
 - "jekyll-sitemap"
 - "jekyll-redirect-from"
 - "jekyll-feed"
 - "jekyll-seo-tag"
+- "jekyll-include-cache"
+- "jekyll-archives"
+collections:
+  podcasts:
+    output: true
+defaults:
+  # _posts
+  - scope:
+      path: ""
+    values:
+      layout: single
+  - scope:
+      path: "/cv/*"
+    values:
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  - scope:
+      path: "/rpgs/*"
+    values:
+      read_time: true
+      share: true
+      related: true
+  - scope:
+      path: "/podcasts/*"
+    values:
+      share: true
+  - scope:
+      path: "/writing/*"
+    values:
+      read_time: true
+      share: true
+      related: true
 feed:
   categories:
     - cv
-    - author
-    - RPG
+    - writing
+    - rpgs
+    - podcasts
+category_archive:
+  type: jekyll-archives
+  path: "/categories/"
+tag_archive:
+  type: jekyll-archives
+  path: "/tags/"
+jekyll-archives:
+  layout: archive-taxonomy
+  enabled:
+    - categories
+    - tags
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/

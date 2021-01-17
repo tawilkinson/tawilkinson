@@ -1,33 +1,13 @@
 ---
-layout: cv
 title: Curriculum Vitae
-group: "navigation"
+layout: category
+taxonomy: cv
+entries_layout: grid
+sort_by: date
+sort_order: reverse
+author_profile: "true"
 description: An interactive curriculum vitae
 redirect_from:
 - /taw-cv/
 - /taw-cv/index.html
 ---
-<div id="page-description" class="page-description">
-	<p class="">{{page.description}}</p>
-</div>
-<ul class="posts">
-
-	{% for post in site.posts %}
-	{% if post.categories contains 'cv' %}
-	<h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-	<p>{{ post.date | date_to_string }}</p>
-	{% if post.content contains site.excerpt_separator %}
-	{{ post.excerpt }}
-	<a href="{{ post.url }}">Read more</a>
-	{% else %}
-	{{ post.content }}
-	{% endif %}
-	<div id="separator"></div>
-	<ul class=tags>
-		{% for tags in post.tags %}
-		<li>{{ tags }}</li>
-		{% endfor %}
-	</ul>
-	{% endif %}
-	{% endfor %}
-</ul>

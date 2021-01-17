@@ -1,15 +1,16 @@
 ---
-layout: author
+layout: single
 title: "Poem: The Thunder"
 categories:
-- author
+- writing
 tags:
 - poetry
 - weather
 status: publish
 type: post
 published: true
-permalink: /author/poem-the-thunder.html
+permalink: /writing/poem-the-thunder.html
+redirect_from: /author/poem-the-thunder.html
 meta: {}
 ---
 

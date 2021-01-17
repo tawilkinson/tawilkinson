@@ -1,11 +1,19 @@
 ---
-layout: default
+layout: single
 title: T A Wilkinson
-group: "navigation"
+gallery:
+- url: "/assets/img/cv.png"
+  image_path: "/assets/img/cv.png"
+  alt: "WordPress CV website"
+- url: "/assets/img/manssago.png"
+  image_path: "/assets/img/manssago.png"
+  alt: "ManSSAGO WordPress website"
+- url: "/assets/img/steampunk.png"
+  image_path: "/assets/img/steampunk.png"
+  alt: "ManSSAGO Steampunk Ball website"
 ---
 
 <body>
-  <h1 class="page-title">T A Wilkinson</h1>
   <p>Welcome to my little corner of the internet! I
     <a target="_blank" href="http://tinkertailorsoldiersponge.com">blog</a>,
     <a target="_blank" href="https://www.youtube.com/user/wyl2km">vlog</a>,
@@ -128,11 +136,7 @@ group: "navigation"
     </div>
   </div>
   <h1>Web Design</h1>
-  <div class="main-carousel" data-flickity='{ "wrapAround": true, "autoPlay" : true, "contain": true, "freescroll": true, "imagesLoaded": true}'>
-    <div class="carousel-cell"><img src="/assets/img/cv.png" alt="WordPress CV website" style="width:auto; height:auto" /></div>
-    <div class="carousel-cell"><img src="/assets/img/manssago.png" alt="ManSSAGO WordPress website" style="width:auto; height:auto" /></div>
-    <div class="carousel-cell"><img src="/assets/img/steampunk.png" alt="ManSSAGO Steampunk Ball website" style="width:auto; height:auto" /></div>
-  </div>
+{% include gallery  %}
   <div id="row">
     <div id="column">
       <h2>CV</h2>
@@ -165,15 +169,10 @@ group: "navigation"
   </div>
   <div id="row">
     <div id="column">
-      <div class="videoWrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLo_w8dzWfiwe3WyhUtQFvp_j11wtjeM4y" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-      </div>
+      {% include video id="videoseries?list=PLo_w8dzWfiwe3WyhUtQFvp_j11wtjeM4y" provider="youtube" %}
     </div>
     <div id="column">
-      <div class="videoWrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLo_w8dzWfiwegdukLUq40wzL5LFJ_pkJJ" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-      </div>
+      {% include video id="videoseries?list=PLo_w8dzWfiwegdukLUq40wzL5LFJ_pkJJ" provider="youtube" %}
     </div>
   </div>
-  <script src="/src/flickity.pkgd.min.js"></script>
 </body>
