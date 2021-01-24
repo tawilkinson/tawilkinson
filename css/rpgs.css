@@ -4,7 +4,7 @@
   display: inline-block;
   vertical-align: top;
   width: 30%;
-  min-width: 320px;
+  min-width: 230px;
   background: #fdf1dc;
   padding: 5px 5px 5px;
   box-shadow: 0 0 1.5em #867453;
@@ -14,6 +14,13 @@
   width: 46.5%;
   min-width: 560px;
   text-align: center;
+}
+
+.stat-block.block {
+  margin: auto;
+  width: 46.5%;
+  min-width: 460px;
+  display:block;
 }
 
 .stat-block.wide .section-left,
@@ -91,6 +98,7 @@
 .creature-heading h2 {
   font-weight: normal;
   font-style: italic;
+  color: #262626;
   font-size: 12px;
   line-height: 1.2em;
   margin: 0 0 10px;
@@ -100,13 +108,13 @@
 .property-line p {
   display: inline;
   margin: 0;
-  color: #262626 !important;
+  color: #922610;
   font-size: 13.5px;
   line-height: 1.2em;
 }
 
 .property-line h4 {
-  color: #262626 !important;
+  color: #7A200D;
 }
 
 .property-line {
@@ -154,6 +162,7 @@
 .property-block p {
   font-size: 13.5px;
   line-height: 1.2em;
+  color: #262626;
   display: inline;
   margin: 0;
 }
