@@ -15,6 +15,8 @@ permalink: /rpgs/company-of-the-dragon.html
 published: true
 header:
   teaser: "/assets/img/rpgs/CotD-ground.png" 
+  overlay_image: "/assets/img/rpgs/CotD-ground.png"
+  overlay_filter: 0.7
 ---
 _In which I detail our adventurers' base of operations..._
 
