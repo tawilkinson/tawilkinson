@@ -7,6 +7,7 @@ logo: /favicon-196x196.png
 og_image: /favicon-196x196.png
 theme: minimal-mistakes-jekyll
 locale: en-GB
+words_per_minute: 200
 minimal_mistakes_skin: "dark"
 markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title
@@ -17,8 +18,8 @@ timezone: Europe/London
 twitter:
   username: "ta_wilkinson"
 social:
-  type:  Person
-  name:  # If the user or organization name differs from the site's name
+  type: Person
+  name: # If the user or organization name differs from the site's name
   links:
     - "https://twitter.com/ta_wilkinson"
     - "https://instagram.com/t_a_wilkinson"
@@ -34,30 +35,30 @@ author:
   bio: "I'm a Research Fellow working in Ultra High Field MRI. I also blog and make podcasts."
   location: "London, UK"
   links:
-  - label: "T A Wilkinson"
-    icon: "fas fa-fw fa-link"
-    url: "https://tawilkinson.com"
-  - label: "Twitter"
-    icon: "fab fa-fw fa-twitter-square"
-    url: "https://twitter.com/ta_wilkinson"
-  - label: "GitHub"
-    icon: "fab fa-fw fa-github"
-    url: "https://github.com/tawilkinson"
-  - label: "Instagram"
-    icon: "fab fa-fw fa-instagram"
-    url: "https://instagram.com/t_a_wilkinson"
+    - label: "T A Wilkinson"
+      icon: "fas fa-fw fa-link"
+      url: "https://tawilkinson.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/ta_wilkinson"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tawilkinson"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/t_a_wilkinson"
 footer:
   links:
     - label: "Favicon by the talented alys.creative"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/alys.creative"
 plugins:
-- "jekyll-sitemap"
-- "jekyll-redirect-from"
-- "jekyll-feed"
-- "jekyll-seo-tag"
-- "jekyll-include-cache"
-- "jekyll-archives"
+  - "jekyll-sitemap"
+  - "jekyll-redirect-from"
+  - "jekyll-feed"
+  - "jekyll-seo-tag"
+  - "jekyll-include-cache"
+  - "jekyll-archives"
 collections:
   podcasts:
     output: true
