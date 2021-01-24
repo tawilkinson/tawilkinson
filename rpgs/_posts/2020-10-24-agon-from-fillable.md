@@ -1,5 +1,5 @@
 ---
-layout: rpgs
+layout: single
 title: "Agon: Form Fillable PDFs"
 category:
 - RPG
@@ -10,6 +10,8 @@ status: publish
 type: post
 published: true
 permalink: /rpgs/agon.html
+header:
+  teaser: "/assets/img/rpgs/agon_title_new.jpg"
 ---
 ## Agon
 <figure width="40%">

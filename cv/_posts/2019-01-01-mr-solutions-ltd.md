@@ -1,5 +1,5 @@
 ---
-layout: cv
+layout: single
 title: 'MR Solutions Ltd: Customer Support Manager & Applications Developer'
 category:
 - cv
@@ -21,11 +21,11 @@ published: true
 permalink: /cv/2019/mr-solutions-ltd.html
 meta:
 structured_content: '{"oembed":{},"overlay":true}'
+date: 2019-01-01
+header:
+  teaser: "/assets/img/cv/mrsolutions.png"
 ---
-<figure>
-<a href="http://www.mrsolutions.com/"><img src="/assets/img/cv/mrsolutions.png" alt="MR Solutions Ltd logo"/></a>
-</figure>
-
+![MR Solutions Ltd logo](/assets/img/cv/mrsolutions.png){: .align-right width="40%"}
 I worked for <a href="http://www.mrsolutions.com/">MR Solutions</a> as a Customer Support Manager &amp; Applications Developer. In this role I gained experience in:
 - Coding in Python for use on a Windows platform
 - Pulse Sequence Development

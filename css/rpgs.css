@@ -1,163 +1,11 @@
-body {
-  background-color: #E0E4CE;
-}
-
-nav, footer {
-  background-color: #114D4D;
-}
-
-ul.tags li{
-  display:inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul.tags li:after {
-  content: ", ";
-}
-
-ul.tags li:last-child:after {
-  content: "";
-}
-
-h1 {
-  text-align: center;
-  color: #27191C;
-  font-size: 62px;
-}
-
-p, li, a {
-  color: #27191C;
-}
-
-nav a {
-  color: #BFBFBF;
-}
-
-nav, footer li {
-  color: #BFBFBF;
-}
-
-nav, footer li {
-  color: #27191C;
-}
-
-nav ul li.nav:before {
-  content: "/ ";
-  width: 1.2em;
-  color: #27191C;
-}
-
-footer ul li:before {
-  content: "/ ";
-  width: 1.2em;
-  color: #27191C;
-}
-
-#separator {
-  border-bottom: 2px solid #27191C;
-}
-
-a.title {
-  color: #6E9987;
-}
-
-a.title:hover {
-  color: #27191C;
-}
-
-#navdrop {
-   background: #114D4D;
-}
-
-.nav ul li a:hover {
-  background: #27191C;
-  color:#FFFFFF;
-}
-
-#icon {
-   fill: #6E9987;
-}
-
-#icon:hover {
-   fill: #27191C;
-}
-
-#page-footer-wrapper {
-  background-color: #114D4D !important;
-}
-
-#navigation-top {
-  background-color: #114D4D !important;
-}
-
-#page-body-wrapper {
-  background-color: #E0E4CE !important;
-}
-
-#banner-area-wrapper {
-  background-color: #E0E4CE !important;
-}
-
-#banner-area-wrapper h1 {
-  color: #27191C !important;
-}
-
-h1.entry-title a {
-  color: #6E9987 !important;
-}
-
-p,
-li,
-h1 {
-  color: #27191C !important;
-}
-
-a {
-  color: #6E9987 !important;
-}
-
-a.currentLink{
-  color: #575757 !important;
-}
-
-i.icon-bookmark {
-  color: #114D4D !important;
-}
-
-i.icon-tag {
-  color: #114D4D !important;
-}
-
-i.icon-comment {
-  color: #114D4D !important;
-}
-
-i.icon-user {
-  color: #114D4D !important;
-}
-
-.horizontal-navigation-bar nav.main-nav .folder .subnav ul {
-  background-color: #114D4D
-}
-
-#mobile-navigation {
-  background-color: #114D4D !important;
-}
-
-#mobile-navigation-label {
-  background-color: #114D4D !important;
-}
-
 .stat-block {
   text-align: left;
   margin: 5px;
   display: inline-block;
   vertical-align: top;
   width: 30%;
-  min-width: 320px;
-  background: #FDF1DC;
+  min-width: 230px;
+  background: #fdf1dc;
   padding: 5px 5px 5px;
   box-shadow: 0 0 1.5em #867453;
 }
@@ -166,6 +14,13 @@ i.icon-user {
   width: 46.5%;
   min-width: 560px;
   text-align: center;
+}
+
+.stat-block.block {
+  margin: auto;
+  width: 46.5%;
+  min-width: 460px;
+  display:block;
 }
 
 .stat-block.wide .section-left,
@@ -206,7 +61,7 @@ i.icon-user {
 
 .orange-border {
   display: block;
-  background: #E69A28;
+  background: #e69a28;
   border: 1px solid #000;
   height: 5px;
   padding: 0 10px 0;
@@ -229,7 +84,8 @@ i.icon-user {
 }
 
 .creature-heading h1 {
-  font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+  font-family: "Libre Baskerville", "Lora", "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond,
+    "Hoefler Text", "Bitstream Charter", Georgia, serif;
   color: #922610;
   font-size: 23px;
   line-height: 1.2em;
@@ -242,6 +98,7 @@ i.icon-user {
 .creature-heading h2 {
   font-weight: normal;
   font-style: italic;
+  color: #262626;
   font-size: 12px;
   line-height: 1.2em;
   margin: 0 0 10px;
@@ -251,15 +108,13 @@ i.icon-user {
 .property-line p {
   display: inline;
   margin: 0;
-  color: #262626 !important;
-  ;
+  color: #922610;
   font-size: 13.5px;
   line-height: 1.2em;
 }
 
 .property-line h4 {
-  color: #262626 !important;
-  ;
+  color: #7A200D;
 }
 
 .property-line {
@@ -269,7 +124,7 @@ i.icon-user {
 }
 
 .property-line.first {
-  margin: 8px 0 0
+  margin: 8px 0 0;
 }
 
 .property-line.last {
@@ -281,7 +136,7 @@ i.icon-user {
   color: #922610;
 }
 
-.abilities>div {
+.abilities > div {
   display: inline-block;
   vertical-align: middle;
   width: 15.5%;
@@ -295,7 +150,7 @@ i.icon-user {
   font-size: 14px;
   line-height: 1.2em;
   text-transform: uppercase;
-  color: #7A200D;
+  color: #7a200d;
 }
 
 .abilities p {
@@ -307,6 +162,7 @@ i.icon-user {
 .property-block p {
   font-size: 13.5px;
   line-height: 1.2em;
+  color: #262626;
   display: inline;
   margin: 0;
 }
@@ -320,8 +176,8 @@ i.icon-user {
 }
 
 .actions h3 {
-  border-bottom: 1px solid #7A200D;
-  color: #7A200D;
+  border-bottom: 1px solid #7a200d;
+  color: #7a200d;
   font-size: 21px;
   font-variant: small-caps;
   font-weight: normal;
