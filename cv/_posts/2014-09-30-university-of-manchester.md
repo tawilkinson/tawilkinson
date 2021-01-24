@@ -26,12 +26,9 @@ date: 2014-09-30
 header:
   teaser: "/assets/img/cv/UoM.png"
 ---
-<figure>
-  <a href="http://www.manchester.ac.uk/" target="_blank"><img src="/assets/img/cv/UoM.png" alt="UoM logo"></a>
-</figure>
-
 <h3>Postgraduate Degree</h3>
-<p>I have a PhD in Magnetic Resonance Imaging (MRI) at <a target="_blank" href="http://www.manchester.ac.uk/">The University of Manchester.</a></p>
+![University of Manchester coat of arms](/assets/img/cv/UoM.png){: .align-right width="40%"}
+I have a PhD in Magnetic Resonance Imaging (MRI) at <a target="_blank" href="http://www.manchester.ac.uk/">The University of Manchester.</a>
 <p>As part of my degree I have gained the following experience:</p>
 <ul>
   <li>Development of novel preclinical MRI protocols for awake imaging;</li>
