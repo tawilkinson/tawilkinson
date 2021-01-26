@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Unparliamentary Language
+permalink: /podcasts/unparliamentary.html
 header:
   teaser: "/assets/img/podcasts/ul.png"
 ---

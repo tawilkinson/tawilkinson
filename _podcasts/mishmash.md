@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Mish Mash Mayhem
+permalink: /podcasts/mishmash.html
 header:
   teaser: "/assets/img/podcasts/mishmash.png"
 ---

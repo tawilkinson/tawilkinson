@@ -1,6 +1,7 @@
 ---
 layout: single
 tile: AstraCast
+permalink: /podcasts/astracast.html
 header:
   teaser: "/assets/img/podcasts/astracast.png"
 ---

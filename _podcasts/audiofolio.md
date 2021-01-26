@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Audio Folio"
+permalink: /podcasts/audiofolio.html
 header:
   teaser: "/assets/img/podcasts/audiofolio.png"
 ---

@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Dr Wilko's Campaign for Better Beverages"
+permalink: /podcasts/drwilko.html
 header:
   teaser: "/assets/img/podcasts/drwilko.png"
 ---

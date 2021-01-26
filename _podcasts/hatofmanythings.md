@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Hat of Many Things
+permalink: /podcasts/hatofmanythings.html
 header:
   teaser: "/assets/img/podcasts/homt.png"
 ---
