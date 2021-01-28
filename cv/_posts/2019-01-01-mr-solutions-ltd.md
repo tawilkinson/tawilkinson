@@ -13,7 +13,7 @@ tags:
 - programming
 - science
 - Visual Studio
-- Python
+- python
 - Jira
 status: publish
 type: post

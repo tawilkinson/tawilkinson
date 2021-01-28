@@ -13,6 +13,7 @@ tags:
 - programming
 - science
 - Visual Studio
+- python
 status: publish
 type: post
 published: true
