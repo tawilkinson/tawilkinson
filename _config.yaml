@@ -87,24 +87,23 @@ defaults:
     values:
       layout: single
   - scope:
-      path: "/cv/*"
+      path: "cv"
     values:
       author_profile: true
-      read_time: true
       share: true
       related: true
   - scope:
-      path: "/rpgs/*"
+      path: "rpgs"
     values:
       read_time: true
       share: true
       related: true
   - scope:
-      path: "/podcasts/*"
+      path: "_podcasts"
     values:
       share: true
   - scope:
-      path: "/writing/*"
+      path: "writing"
     values:
       read_time: true
       share: true
