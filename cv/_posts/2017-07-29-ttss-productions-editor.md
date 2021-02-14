@@ -18,9 +18,9 @@ redirect_from: /taw-cv//vector-software-developer-ww49c
 meta: {}
 date: 2017-07-29
 header:
-  teaser: "/assets/img/cv/ttss.png"
+  teaser: "/assets/img/cv/TTSS.png"
 ---
-![TTSS logo](/assets/img/cv/ttss.png){: .align-right width="40%"}
+![TTSS logo](/assets/img/cv/TTSS.png){: .align-right width="40%"}
 I am the editor and co-host for four podcasts hosted on my main website:
 <ul dir="ltr">
   <li>
