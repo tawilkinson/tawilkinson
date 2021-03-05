@@ -29,5 +29,6 @@ Unfortunately, the Player Kit above is not form fillable which is not so useful 
 
 ### Changelog
 
+- 05/03/2021 - Fixed missing Divine Favor boxes for the Honored God section of the character sheet (thanks to [/u/errrik012](https://www.reddit.com/user/errrik012) for spotting this)
 - 24/10/2020 - Fixed linked rows on the Player Kit that made it impossible to fill out Island Destinies correctly
 - 23/10/2020 - First version
