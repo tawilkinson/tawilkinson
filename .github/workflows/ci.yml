@@ -32,8 +32,8 @@ jobs:
         # https://github.com/symfony/cli/issues/227#issuecomment-601680974
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan ${{ secrets.HOST }} >> ~/.ssh/known_hosts
       - name: Run deploy script
         run: |
