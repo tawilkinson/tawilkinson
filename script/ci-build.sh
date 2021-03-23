@@ -1,4 +1,7 @@
 #!/bin/bash
+# Fix for error in Linux Docker
+touch Gemfile.lock
+chmod a+w Gemfile.lock
 # build the site with Jekyll
 jekyll build
 
