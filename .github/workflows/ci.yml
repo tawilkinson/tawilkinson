@@ -14,7 +14,7 @@ jobs:
         run: |
           docker run \
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-          jekyll/builder:4.2.0 chpst -u jekyll:jekyll /bin/bash -c "chmod +x script/ci-build.sh && ./script/ci-build.sh"
+          jekyll/builder:4.2.0 --entrypoint JEKYLL_ROOTLESS /bin/bash -c "chmod +x script/ci-build.sh && ./script/ci-build.sh"
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
