@@ -16,5 +16,4 @@ mkdir build
 tar -czvf build/build.tar.gz -C _site .
 
 # copy the deploy script to the build dir as well
-ls -la
 cp script/ci-deploy.sh /build/
