@@ -1,6 +1,6 @@
 # T A Wilkinson
 
-[![Build Status](https://travis-ci.org/tawilkinson/tawilkinson.svg?branch=master)](https://travis-ci.org/tawilkinson/tawilkinson)
+[![Build Status](https://github.com/tawilkinson/tawilkinson/actions/workflows/ci.yml/badge.svg)](https://github.com/tawilkinson/tawilkinson/actions/workflows/ci.yml)
 
 My personal website:
 - static website
