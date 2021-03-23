@@ -3,7 +3,7 @@
 touch Gemfile.lock
 chmod a+w Gemfile.lock
 # build the site with Jekyll
-jekyll build
+sudo jekyll build
 
 # if jekyll failed, fail the whole build
 if [ $? -ne 0 ]
