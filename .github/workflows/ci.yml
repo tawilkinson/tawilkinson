@@ -28,6 +28,9 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: build
+      - name: Rsync check
+        run: |
+        which rsync
       - name: deploy to server
         uses: AEnterprise/rsync-deploy@v1.0
         env:
@@ -38,8 +41,6 @@ jobs:
           SERVER_IP: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           SERVER_DESTINATION: ${{ secrets.WEBPATH }}/tar
-        run: |
-        which rsync
       - name: Run deploy script
         run: |
           ssh -o StrictHostKeyChecking=yes ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'bash -s' -- < build/ci-deploy.sh ${{ secrets.WEBPATH }}
