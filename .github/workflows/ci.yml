@@ -38,6 +38,8 @@ jobs:
           SERVER_IP: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
           SERVER_DESTINATION: ${{ secrets.WEBPATH }}/tar
+        run: |
+        which rsync
       - name: Run deploy script
         run: |
           ssh -o StrictHostKeyChecking=yes ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'bash -s' -- < build/ci-deploy.sh ${{ secrets.WEBPATH }}
