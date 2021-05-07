@@ -7,4 +7,4 @@ mkdir $1/tmp
 tar -xzvf $1/tar/build.tar.gz -C $1/tmp
 
 # overwrite the content of the /site dir with the /tmp dir
-rsync -Pav --exclude=$1/public_html/.well-known/ --delete $1/tmp/ $1/public_html/
+rsync -Pav --exclude=/.well-known --delete $1/tmp/ $1/public_html/
