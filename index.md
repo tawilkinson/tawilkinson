@@ -84,11 +84,11 @@ My friend Rob and I have a politics podcast hosted on my blog. We dissect the Br
 
 I am working on short Sci-Fi stories and speculative fiction set in the real world which are hosted on this website.
 
-**Sci-Fi Influences:** Joss Whedon, H. G. Wells, Isaac Asimov.
+**Sci-Fi Influences:** H. G. Wells, Isaac Asimov, Alistair Reynolds.
 
 ## [Fantasy](/writing)
 
 I am working on short and longer Fantasy stories which will appear at on this site soon.
 
-**Fantasy Influences:** J.R.R. Tolkien, George R. R. Martin, Neil Gaiman, B. A. Dearsley, H. P. Lovecraft.
+**Fantasy Influences:** J.R.R. Tolkien, N. K. Jemisin, Neil Gaiman, B. A. Dearsley, H. P. Lovecraft.
 
