@@ -22,22 +22,20 @@ jobs:
           path: build
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     needs: build_job
     steps:
       - uses: actions/download-artifact@v1
         with:
           name: build
-      - name: Deploy via rsync
-        uses: trendyminds/github-actions-rsync@master
-        with:
-          RSYNC_OPTIONS: -avzr --delete --exclude node_modules --exclude '.git*'
-          RSYNC_TARGET: ${{ secrets.WEBPATH }}/tar
-          RSYNC_SOURCE: build/
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
-          SSH_USERNAME: ${{ secrets.USERNAME }}
-          SSH_HOSTNAME: ${{ secrets.HOST }}
+      - name: "Prepare SSH key and known hosts"
+        # https://github.com/symfony/cli/issues/227#issuecomment-601680974
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan ${{ secrets.HOST }} >> ~/.ssh/known_hosts
       - name: Run deploy script
         run: |
+          rsync -rSlh --stats build/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.WEBPATH }}/tar
           ssh -o StrictHostKeyChecking=yes ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'bash -s' -- < build/ci-deploy.sh ${{ secrets.WEBPATH }}
