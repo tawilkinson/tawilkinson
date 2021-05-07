@@ -30,7 +30,7 @@ jobs:
           name: build
       - name: Rsync check
         run: |
-        which rsync
+          which rsync
       - name: deploy to server
         uses: AEnterprise/rsync-deploy@v1.0
         env:
