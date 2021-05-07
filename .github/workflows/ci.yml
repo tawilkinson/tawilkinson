@@ -38,7 +38,8 @@ jobs:
       - name: Rsync check
         run: |
           which rsync
+          rsync --version
       - name: Run deploy script
         run: |
-          /usr/bin/rsync -rSlh --stats build/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.WEBPATH }}/tar
+          rsync -rSlh --stats build/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.WEBPATH }}/tar
           ssh -o StrictHostKeyChecking=yes ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'bash -s' -- < build/ci-deploy.sh ${{ secrets.WEBPATH }}
