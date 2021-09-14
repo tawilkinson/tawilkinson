@@ -9,7 +9,7 @@ This site is my home on the web and points to my various projects around the int
 
 # Scientist
 ## Research Fellow
-I am currently a Research Fellow at [King's College London](/cv/2020/kcl.html). I am part of the core physics team on the [LoCUS](https://www.kcl.ac.uk/bmeis/research-impact/research-facilities) Ultra-High Field MRI system. You can find my univerity profile on the [KCL website](https://www.kcl.ac.uk/people/thomas-wilkinson).
+I am currently a Research Fellow at [King's College London](/cv/2020/kcl.html). I am part of the core physics team on the [LoCUS](https://www.kcl.ac.uk/bmeis/research-impact/research-facilities) Ultra-High Field MRI system. You can find my university profile on the [KCL website](https://www.kcl.ac.uk/people/thomas-wilkinson).
 
 ## PhD
 I have completed a PhD in Magnetic Resonance Imaging (MRI) at the [University of Manchester](/cv/2014/university-of-manchester.html).
