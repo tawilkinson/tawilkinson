@@ -5,7 +5,6 @@ category:
 - cv
 tags:
 - C++
-- current
 - Linux
 - Windows
 - programming

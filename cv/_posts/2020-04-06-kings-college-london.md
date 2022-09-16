@@ -14,6 +14,8 @@ tags:
 - science
 - Visual Studio
 - python
+- Docker
+- current
 status: publish
 type: post
 published: true
@@ -27,6 +29,8 @@ I am currently a Research Fellow at <a href="https://www.kcl.ac.uk/people/thomas
 - Coding in C++ for use on Windows &amp; Linux platforms
 - Converting MATLAB code to C++
 - Research Skills
+- Image analysis in MatLab & Python
+- 
 
 ### Proficiencies
 - C++
@@ -36,3 +40,8 @@ I am currently a Research Fellow at <a href="https://www.kcl.ac.uk/people/thomas
 - MRI
 - Linux
 - Windows
+- Docker
+
+### Publications
+
+### Conferences
