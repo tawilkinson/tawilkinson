@@ -4,26 +4,22 @@ title: 'Moderator'
 category:
 - cv
 tags:
-- C++
+- Discord
 - current
-- Linux
-- Windows
-- programming
-- python
-- bash
-- batch
+- typescript
+- javascript
 status: publish
 type: post
 published: true
-permalink: /cv/2019/tuataria-modmin.html
-redirect_from: /taw-cv/tuataria-modmin
-data: 2019-02-17
+permalink: /cv/2018/lifes-library-moderator.html
+redirect_from: /taw-cv/lifes-library-moderator
+data: 2018-12-01
 header:
   teaser: "/assets/img/cv/tuataria.png"
 ---
-![Vector Logo](/assets/img/cv/tuataria.png){: .align-right width="40%"}
+![Life's Library Logo](/assets/img/cv/ll.jpg){: .align-right width="40%"}
 
-I am currently a Modmin of the <a href="https://www.tuataria.com/">Tuataria Discord Server</a>. As part of a 20+ international leadership team of 6,000+ member international club with substantial online presence, working in groups to facilitate events, deliver technical effectiveness, and ensure safety and wellbeing of members.
+I was a moderator of the <a href="https://www.instagram.com/lifeslibrarybookclub/">Life's Library Book Club</a> on Discord. As part of an international leadership team of 9,000+ member international book club, working in groups to facilitate events, deliver book discussions, and ensure safety and wellbeing of members.
 
 In this volunteer role I have gained experience in:
 - Discord Moderation
@@ -31,7 +27,6 @@ In this volunteer role I have gained experience in:
 - Discord bots
 
 ### Proficiencies
-- Typescript
 - Interpersonal skills
 - Conflict resolution
 - Event Management

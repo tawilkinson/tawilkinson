@@ -17,7 +17,7 @@ data: 2019-02-17
 header:
   teaser: "/assets/img/cv/tuataria.png"
 ---
-![Vector Logo](/assets/img/cv/tuataria.png){: .align-right width="40%"}
+![Tuataria Logo](/assets/img/cv/tuataria.png){: .align-right width="40%"}
 
 I am currently a Modmin of the <a href="https://www.tuataria.com/">Tuataria Discord Server</a>. As part of a 20+ international leadership team of 6,000+ member international club with substantial online presence, working in groups to facilitate events, deliver technical effectiveness, and ensure safety and wellbeing of members.
 
