@@ -1,7 +1,7 @@
 #!/bin/bash
 chown -R jekyll:jekyll /srv/jekyll
 # build the site with Jekyll
-jekyll build
+jekyll build --trace
 
 # if jekyll failed, fail the whole build
 if [ $? -ne 0 ]
