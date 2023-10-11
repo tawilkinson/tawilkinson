@@ -15,7 +15,7 @@ permalink: /cv/2018/lifes-library-moderator.html
 redirect_from: /taw-cv/lifes-library-moderator
 data: 2018-12-01
 header:
-  teaser: "/assets/img/cv/tuataria.png"
+  teaser: "/assets/img/cv/ll.jpg"
 ---
 ![Life's Library Logo](/assets/img/cv/ll.jpg){: .align-right width="40%"}
 
