@@ -18,7 +18,7 @@ date: 2013-09-06
 header:
   teaser: "/assets/img/cv/scouts.png"
 ---
-<h3>Scout Leader 2013-Present</h3>
+<h3>Scout Leader 2013-2014</h3>
 ![old Scouts logo](/assets/img/cv/scouts.png){: .align-right width="40%"}
 <p>I was the Scout Leader at <a target="_blank" href="https://www.306th.org.uk/">306th Manchester Scouts</a> until September 2014 having restarted the Scout section with a new leadership team in September 2013.</p>
 <h3>Camping</h3>
