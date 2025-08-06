@@ -7,9 +7,13 @@ Welcome to my little corner of the internet! I [blog](http://tinkertailorsoldier
 
 This site is my home on the web and points to my various projects around the internet and in real life. Enjoy!
 
+# Software
+## Software Engineer
+I am currently a Software Engineer working in R&D for [Vector Informatik](https://www.vector.com/gb/en/).
+
 # Scientist
 ## Research Fellow
-I am currently a Research Fellow at [King's College London](/cv/2020/kcl.html). I am part of the core physics team on the [LoCUS](https://www.kcl.ac.uk/bmeis/research-impact/research-facilities) Ultra-High Field MRI system. You can find my university profile on the [KCL website](https://www.kcl.ac.uk/people/thomas-wilkinson).
+I was a Research Fellow at [King's College London](/cv/2020/kcl.html). I was part of the core physics team on the [LoCUS](https://www.kcl.ac.uk/bmeis/research-impact/research-facilities) Ultra-High Field MRI system. You see my old university profile on the [KCL website](https://web.archive.org/web/20221205211018/https://www.kcl.ac.uk/people/thomas-wilkinson).
 
 ## PhD
 I have completed a PhD in Magnetic Resonance Imaging (MRI) at the [University of Manchester](/cv/2014/university-of-manchester.html).
@@ -88,7 +92,7 @@ I am working on short Sci-Fi stories and speculative fiction set in the real wor
 
 ## [Fantasy](/writing)
 
-I am working on short and longer Fantasy stories which will appear at on this site soon.
+I am working on short and longer Fantasy stories which will appear on this site soon.
 
 **Fantasy Influences:** J.R.R. Tolkien, N. K. Jemisin, Neil Gaiman, B. A. Dearsley, H. P. Lovecraft.
 
